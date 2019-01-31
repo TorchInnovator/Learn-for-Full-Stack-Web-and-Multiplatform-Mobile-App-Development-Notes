@@ -1,4 +1,6 @@
-# Setting up your Environment: Git and Node
+
+
+Setting up your Environment: Git and Node
 
 ## Setting up Git
 
@@ -31,6 +33,7 @@ git config --list
 * create a folder named git-test
 
 * add **index.html** in this folders\(git-test\)
+
   * index.html like this:
 
   ```
@@ -43,8 +46,6 @@ git config --list
       </body>
   </html>
   ```
-
-
 
 * init the folder as a Git repository
 
@@ -69,10 +70,7 @@ Initialized empty Git repository in C:/Users/User/Documents/GitHub/Learn-for-Ful
           index.html
 
   nothing added to commit but untracked files present (use "git add" to track)
-
   ```
-
-
 
 * git add
 
