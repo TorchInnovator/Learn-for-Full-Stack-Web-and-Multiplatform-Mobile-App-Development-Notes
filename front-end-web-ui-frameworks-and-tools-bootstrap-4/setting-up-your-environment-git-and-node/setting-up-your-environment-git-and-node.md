@@ -1,6 +1,6 @@
-Setting up your Environment: Git and Node
+# Setting up your Environment: Git and Node
 
-## Setting up Git
+# Setting up Git
 
 * 確認git版本資訊
 
