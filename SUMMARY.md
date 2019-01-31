@@ -5,4 +5,5 @@
   * [Week1](front-end-web-ui-frameworks-and-tools-bootstrap-4/setting-up-your-environment-git-and-node.md)
     * [Setting up your Environment: Git and Node](front-end-web-ui-frameworks-and-tools-bootstrap-4/setting-up-your-environment-git-and-node/setting-up-your-environment-git-and-node.md)
     * Getting Started with Bootstrap
+    * [Responsive Design and Bootstrap Grid System](front-end-web-ui-frameworks-and-tools-bootstrap-4/setting-up-your-environment-git-and-node/responsive-design-and-bootstrap-grid-system.md)
 
