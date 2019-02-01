@@ -10,8 +10,8 @@
     min-height:400px;
 }
 
-.row-footer{
-    background-color: #AfAfAf;
+.footer{
+    background-color: #D1C4E9;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -28,6 +28,13 @@ address{
     margin:0px;
     color:#0f0f0f;
 }
+
+.row-footer{
+    background-color: #AfAfAf;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
 body{
     padding:50px 0px 0px 0px;
     z-index:0;
