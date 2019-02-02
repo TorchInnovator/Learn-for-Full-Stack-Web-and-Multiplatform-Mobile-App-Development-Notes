@@ -6,7 +6,9 @@
 
 * cmd move to conFusion folder and install lite-server
 
-       `npm install`
+  ```
+   npm install
+  ```
 
 * Installing an NPM Module - lite server
 
