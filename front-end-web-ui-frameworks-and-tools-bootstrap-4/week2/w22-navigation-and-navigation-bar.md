@@ -38,9 +38,31 @@
                     <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>           
-            </div> 
+            </div>
 ```
 
-* 
+### Modifications to the CSS styles
+
+* add these code to mystyles.css
+
+```
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+     background-color: #512DA8;
+}
+
+
+```
+
+### Demo
+
+![](/assets/W2_1Demo.png)
+
+---
+
 
 
