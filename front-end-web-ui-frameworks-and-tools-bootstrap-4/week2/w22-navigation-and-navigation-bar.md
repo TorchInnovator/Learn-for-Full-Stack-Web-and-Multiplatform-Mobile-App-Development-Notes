@@ -54,15 +54,26 @@ body{
 .navbar-dark {
      background-color: #512DA8;
 }
-
-
 ```
 
-### Demo
+# Demo
 
 ![](/assets/W2_1Demo.png)
 
 ---
+
+# Icon Fonts
+
+### Using Icon Fonts and Other CSS classes
+
+* install font toolkit and Bootstrap Social button in our website
+
+```
+npm install font-awesome@4.7.0 --save
+npm install bootstrap-social@5.1.1 --save
+```
+
+* And link css to your page
 
 
 
