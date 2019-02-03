@@ -1,0 +1,58 @@
+# Displaying Content: Tables and Cards
+
+* Add Bootstrap tables as follows:
+  * code
+  * ```html
+    <div class="row row-content">
+                <div class="col-12 col-sm-9">
+                    <h2>Facts &amp; Figures</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>2013</th>
+                                    <th>2014</th>
+                                    <th>2015</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Employees</th>
+                                    <td>15</td>
+                                    <td>30</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <th>Guests Served</th>
+                                    <td>15000</td>
+                                    <td>45000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <th>Special Events</th>
+                                    <td>3</td>
+                                    <td>20</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <th>Annual Turnover</th>
+                                    <td>$251,325</td>
+                                    <td>$1,250,375</td>
+                                    <td>~$3,000,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                </div>
+            </div>
+    ```
+  * Demo
+* Add Boostrap card as follows
+  * code
+  * Demo
+
+
+
