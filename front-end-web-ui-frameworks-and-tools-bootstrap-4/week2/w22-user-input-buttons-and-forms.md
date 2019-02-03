@@ -8,7 +8,7 @@
 
 * add button to \_contactus.html \_file :
 
-  * ```
+  * ```html
     <div class="btn-group" role="group">
         <a role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
         <a role="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
