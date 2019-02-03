@@ -18,7 +18,7 @@
 
 * Demo
 
-  ![](/assets/W2_2Button.png)
+  ![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_2Button.png)
 
 ---
 
@@ -83,10 +83,7 @@
                       </div>
                   </form>
   ```
-
 * Demo
 
-![](/assets/W2_2Form.png)
-
-
+![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_2Form.png)
 
