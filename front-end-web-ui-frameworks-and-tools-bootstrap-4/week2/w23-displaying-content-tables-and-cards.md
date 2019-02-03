@@ -54,5 +54,11 @@
   * code
   * Demo
 
+* In the card using the blockquote typography
+
+  * code
+
+  * Demo
+
 
 
