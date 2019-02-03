@@ -4,7 +4,7 @@
 
 * Add simple navigation bar so that can be link to other pages on the website
 
-```
+```html
     <nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
         <div class="container">
            <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
@@ -22,7 +22,7 @@
 
 * Because we want to be replaced by a toggle button so that the items can be toggled on or off when required on small and extra small screens, so add this code to the nav bar
 
-```
+```html
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,7 +30,7 @@
 
 * To hide itmes from nav bar for small screens
 
-```
+```html
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
@@ -45,7 +45,7 @@
 
 * add these code to mystyles.css
 
-```
+```css
 body{
     padding:50px 0px 0px 0px;
     z-index:0;
@@ -75,13 +75,13 @@ npm install bootstrap-social@5.1.1 --save
 
 * And link css to your page
 
-```
+```html
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 ```
 
 * change your index.html and aboutus.html's ul list item
-* ```
+* ```html
   <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
   <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
   <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
@@ -94,7 +94,7 @@ npm install bootstrap-social@5.1.1 --save
 
 * Both index and aboutus html page , go to footer of page and add font like this:
 
-  * ```
+  * ```html
     <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -141,12 +141,4 @@ npm install bootstrap-social@5.1.1 --save
   * Demo
 
 ![](/assets/W2_1AddFontToFooter.png)
-
-
-
-
-
-
-
-
 
