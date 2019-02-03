@@ -50,7 +50,8 @@
             </div>
     ```
   * Demo
-  * ![](/assets/W2_3Tables.png)
+
+  ![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_3Tables.png)
 * Add Boostrap card as follows
 
   * code
@@ -74,7 +75,8 @@
                 </div>
     ```
   * Demo
-  * ![](/assets/W2_3Card1.png)
+
+  ![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_3Card1.png)
 
 * In the card using the blockquote typography
 
@@ -95,7 +97,8 @@
                 </div>
     ```
   * Demo
-  * ![](/assets/W2_3Card2.png)
+
+  ![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_3Card2.png)
 
 
 
