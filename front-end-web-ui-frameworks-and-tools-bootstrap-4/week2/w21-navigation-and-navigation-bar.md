@@ -58,7 +58,7 @@ body{
 
 # Demo
 
-![](/assets/W2_1Demo.png)
+![](front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_1Demo.png)
 
 ---
 
@@ -90,7 +90,7 @@ npm install bootstrap-social@5.1.1 --save
 
   * Demo
 
-  ![](/assets/W2_1AddFontToNav.png)
+  ![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_1AddFontToNav.png)
 
 * Both index and aboutus html page , go to footer of page and add font like this:
 
@@ -140,5 +140,5 @@ npm install bootstrap-social@5.1.1 --save
     ```
   * Demo
 
-![](/assets/W2_1AddFontToFooter.png)
+![](/front-end-web-ui-frameworks-and-tools-bootstrap-4/assets/W2_1AddFontToFooter.png)
 
