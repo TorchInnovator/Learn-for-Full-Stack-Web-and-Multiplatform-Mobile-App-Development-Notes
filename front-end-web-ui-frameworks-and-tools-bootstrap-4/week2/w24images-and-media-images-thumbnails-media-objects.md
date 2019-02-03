@@ -8,7 +8,7 @@
 
 * Adding Media Objects
 
-```
+```html
 <img class="d-flex mr-3 img-thumbnail align-self-center"
                             src="img/uthappizza.png" alt="Uthappizza">
 <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="Alberto Somayya">
