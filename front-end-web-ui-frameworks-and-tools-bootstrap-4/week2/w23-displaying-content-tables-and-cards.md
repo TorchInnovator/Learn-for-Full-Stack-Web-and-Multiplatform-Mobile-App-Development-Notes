@@ -51,13 +51,47 @@
     ```
   * Demo
 * Add Boostrap card as follows
+
   * code
+  * ```html
+                <div class="col-12 col-sm-6">
+                    <div class="card">
+                        <h3 class="card-header bg-primary text-white">Facts At a Glance</h3>
+                        <div class="card-body">
+                            <dl class="row">
+                                <dt class="col-6">Started</dt>
+                                <dd class="col-6">3 Feb. 2013</dd>
+                                <dt class="col-6">Major Stake Holder</dt>
+                                <dd class="col-6">HK Fine Foods Inc.</dd>
+                                <dt class="col-6">Last Year's Turnover</dt>
+                                <dd class="col-6">$1,250,375</dd>
+                                <dt class="col-6">Employees</dt>
+                                <dd class="col-6">40</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+    ```
   * Demo
 
 * In the card using the blockquote typography
 
   * code
 
+  * ```html
+                <div class="col-12">
+                    <div class="card card-body bg-light">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">You better cut the pizza in four pieces because
+                                I'm not hungry enough to eat six.</p>
+                            <footer class="blockquote-footer">Yogi Berra,
+                                <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
+                                P. Pepe, Diversion Books, 2014</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+    ```
   * Demo
 
 
