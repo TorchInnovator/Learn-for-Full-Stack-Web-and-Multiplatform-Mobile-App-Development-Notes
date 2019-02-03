@@ -35,7 +35,7 @@
 
   * code 
 
-  ```
+  ```html
   <!-- Required meta tags always come first -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,10 +49,6 @@
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   ```
-
-  * berfore we add this html web look like this:![](/assets/W1_2beforeAddLink.png)
-
-  * after add:![](/assets/W1_2afterAddLink.png)
 
 
 

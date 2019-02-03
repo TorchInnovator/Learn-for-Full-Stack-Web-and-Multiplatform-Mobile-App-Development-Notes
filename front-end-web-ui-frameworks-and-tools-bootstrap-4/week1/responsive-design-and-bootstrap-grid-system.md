@@ -20,14 +20,14 @@ npm install lite-server --save-dev
 
   * Viewable area of the browser on the screen
 
-  ```
+  ```html
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   ```
 * container
 
   * wrap site contents and house  grid system
 
-  ```
+  ```html
   <div class="container">
   ```
 
@@ -35,7 +35,7 @@ npm install lite-server --save-dev
 
   * Rows are wrappers for columns.
 
-  ```
+  ```html
   <div class="row">
   ```
 
@@ -43,13 +43,13 @@ npm install lite-server --save-dev
 
   * A jumbotron is used to showcase key content on a website.
 
-  ```
+  ```html
   <header class="jumbotron">
   ```
 
 * List
 
-  ```
+  ```html
   <ul class="list-unstyled">
   ```
 
