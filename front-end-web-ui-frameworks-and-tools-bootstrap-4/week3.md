@@ -13,12 +13,16 @@
   * Now we add js function\(data-toggle="tooltip"\) to make action
 
   ```html
-      <script>
-          $(document).ready(function(){
-              $('[data-toggle="tooltip"]').tooltip();
-          });
-      </script>
+  <script>
+      $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+      });
+  </script>
   ```
+
+  * Demo
+
+  ![](/assets/W3_3Tooltip.png)
 
 * Adding a Modal
 
@@ -72,6 +76,9 @@
       </div>
   ```
 
-* 
+* Demo
+
+![](/assets/W3_3loginModal.png)
+
 
 
