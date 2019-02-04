@@ -81,5 +81,18 @@
                   </div>
   ```
 
+* Modifying the tab-content CSS
+
+  * mystyles.css add these code:
+
+  ```css
+  .tab-content {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+  }
+  ```
+
 
 
