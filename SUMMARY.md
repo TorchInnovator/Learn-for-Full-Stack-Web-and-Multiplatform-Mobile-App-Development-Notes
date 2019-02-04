@@ -15,4 +15,5 @@
   * [Week3](front-end-web-ui-frameworks-and-tools-bootstrap-4/week3.md)
     * [W3\_1-Tabs](front-end-web-ui-frameworks-and-tools-bootstrap-4/week3/tabs-pills-and-tabbed-navigation.md)
     * [W3\_2Accordion](front-end-web-ui-frameworks-and-tools-bootstrap-4/week3/w32accordion.md)
+    * W3\_3Tooltips, Popovers and Modals
 
