@@ -12,9 +12,16 @@
 
   * Now we add js function\(data-toggle="tooltip"\) to make action
 
+  ```
+      <script>
+          $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();
+          });
+      </script>
+  ```
+
 * Adding a Modal
 
 * 
-
 
 
