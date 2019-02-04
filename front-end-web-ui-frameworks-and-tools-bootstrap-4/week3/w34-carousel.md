@@ -1,6 +1,7 @@
 ### Carousel
 
 * Adding a Carousel
+
   * add basic carousel and add content inside the carousel
 
   ```html
@@ -73,7 +74,6 @@
     left: 0;
     min-height: 300px;
 }
-
 ```
 
 * Add Carousel Controls
@@ -91,6 +91,10 @@
     <span class="carousel-control-next-icon"></span>
 </a>
 ```
+
+* Demo
+
+![](/assets/W3_4Carousel.png)
 
 
 
