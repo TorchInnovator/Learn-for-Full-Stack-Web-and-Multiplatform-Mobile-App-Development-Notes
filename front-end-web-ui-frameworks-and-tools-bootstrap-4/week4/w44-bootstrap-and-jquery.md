@@ -74,7 +74,7 @@
               });
   ```
 
-* Demo
+* Demo![](/assets/W4_1modifyCarousel.png)
 
 
 
