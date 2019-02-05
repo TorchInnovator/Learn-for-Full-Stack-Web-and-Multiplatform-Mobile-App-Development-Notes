@@ -1,0 +1,215 @@
+# Less
+
+* Adding Less Variables
+
+  ```less
+  @lt-gray: #ddd;
+  @background-dark: #512DA8;
+  @background-light: #9575CD;
+  @background-pale: #D1C4E9;
+
+  // Height variables
+  @carousel-item-height: 300px;
+  ```
+
+* Less Mixins
+
+  ```less
+  .zero-margin (@pad-up-dn: 0px, @pad-left-right: 0px) {
+      margin:0px auto;
+      padding: @pad-up-dn @pad-left-right;
+  }
+
+  .row-header{
+      .zero-margin();
+  }
+
+  .row-content {
+      .zero-margin(50px,0px);
+      border-bottom: 1px ridge;
+      min-height:400px;
+  }
+
+  .footer{
+      background-color: @background-pale;
+      .zero-margin(20px, 0px);
+  }
+
+  .jumbotron {
+      .zero-margin(70px,30px);
+      background: @background-light ;
+      color:floralwhite;
+  }
+
+  address{
+      font-size:80%;
+      margin:0px;
+      color:#0f0f0f;
+  }
+
+  body{
+      padding:50px 0px 0px 0px;
+      z-index:0;
+  }
+
+  .navbar-dark {
+       background-color: @background-dark;
+  }
+
+  .tab-content {
+      border-left: 1px solid @lt-gray;
+      border-right: 1px solid @lt-gray;
+      border-bottom: 1px solid @lt-gray;
+      padding: 10px;
+  }
+  ```
+
+* Nesting Selectors
+
+  ```less
+  .carousel {
+      background:@background-dark;
+
+      .carousel-item {
+          height: @carousel-item-height;
+          img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              min-height: 300px;
+          }
+      }
+  }
+
+  #carouselButton {
+      right:0px;
+      position: absolute;
+      bottom: 0px;
+  }
+  ```
+
+* Installing and using the lessc Compiler
+
+  * install
+
+    ```
+    npm install -g less@2.7.2
+    ```
+
+  * convert less to css
+
+    ```
+    lessc styles.less styles.css
+    ```
+
+---
+
+# Sass
+
+Adding Less Variables
+
+* ```less
+  $lt-gray: #ddd;
+  $background-dark: #512DA8;
+  $background-light: #9575CD;
+  $background-pale: #D1C4E9;
+
+  // Height variables
+  $carousel-item-height: 300px;
+  ```
+* Less Mixins
+
+  ```less
+  @mixin zero-margin($pad-up-dn, $pad-left-right) {
+      margin:0px auto;
+      padding: $pad-up-dn $pad-left-right;
+  }.row-header{
+      @include zero-margin(0px,0px);
+  }
+
+  .row-content {
+      @include zero-margin(50px,0px);
+      border-bottom: 1px ridge;
+      min-height:400px;
+  }
+
+  .footer{
+      background-color: $background-pale;
+      @include zero-margin(20px, 0px);
+  }
+
+  .jumbotron {
+      @include zero-margin(70px,30px);
+      background: $background-light ;
+      color:floralwhite;
+  }
+
+  address{
+      font-size:80%;
+      margin:0px;
+      color:#0f0f0f;
+  }
+
+  body{
+      padding:50px 0px 0px 0px;
+      z-index:0;
+  }
+
+  .navbar-dark {
+       background-color: $background-dark;
+  }
+
+  .tab-content {
+      border-left: 1px solid $lt-gray;
+      border-right: 1px solid $lt-gray;
+      border-bottom: 1px solid $lt-gray;
+      padding: 10px;
+  }
+  ```
+
+* Nesting Selectors
+
+  ```less
+  .carousel {
+      background:$background-dark;
+
+      .carousel-item {
+          height: $carousel-item-height;
+          img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              min-height: 300px;
+          }
+      }
+  }
+
+  #carouselButton {
+      right:0px;
+      position: absolute;
+      bottom: 0px;
+  }
+  ```
+
+* Installing and using the lessc Compiler
+
+  * install
+
+    ```
+    npm install --save-dev node-sass@4.7.2
+    ```
+
+  * In package.json add following scripts
+
+    ```
+    "scss": "node-sass -o css/ css/"
+    ```
+
+  * convert Scss to css
+
+    ```
+    npm run scss
+    ```
+
+
+
