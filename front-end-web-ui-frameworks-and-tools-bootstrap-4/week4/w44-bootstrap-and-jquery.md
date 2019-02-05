@@ -2,7 +2,7 @@
 
 * Adding the Carousel Control Buttons
 
-  ```
+  ```html
                   <div class="btn-group" id="carouselButton">
                       <button class="btn btn-danger btn-sm" id="carousel-pause">
                           <span class="fa fa-pause"></span>
