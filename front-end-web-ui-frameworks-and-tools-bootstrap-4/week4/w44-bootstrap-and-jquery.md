@@ -41,6 +41,12 @@
 
 * Demo
 
+![](/assets/W4_1carousel.png)
+
+---
+
+# More Bootstrap and JQuery
+
 
 
 
