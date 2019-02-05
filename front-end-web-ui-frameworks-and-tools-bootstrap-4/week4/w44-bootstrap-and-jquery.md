@@ -47,7 +47,34 @@
 
 # More Bootstrap and JQuery
 
+* Modifying the Carousel Control Buttons
 
+  * we use single button that will be paused
+
+  ```html
+                      <button class="btn btn-danger btn-sm" id="carouselButton">
+                          <span id="carousel-button-icon" class="fa fa-pause"></span>
+                      </button>
+  ```
+
+* Modifying JavaScript Code
+
+  ```js
+              $("#carouselButton").click(function(){
+                  if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                      $("#mycarousel").carousel('pause');
+                      $("#carouselButton").children("span").removeClass('fa-pause');
+                      $("#carouselButton").children("span").addClass('fa-play');
+                  }
+                  else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                      $("#mycarousel").carousel('cycle');
+                      $("#carouselButton").children("span").removeClass('fa-play');
+                      $("#carouselButton").children("span").addClass('fa-pause');                    
+                  }
+              });
+  ```
+
+* 
 
 
 
