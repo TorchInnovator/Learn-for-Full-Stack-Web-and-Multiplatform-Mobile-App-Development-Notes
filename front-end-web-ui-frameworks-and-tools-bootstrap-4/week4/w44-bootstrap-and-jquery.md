@@ -25,7 +25,7 @@
 
 * Adding JavaScript Code
 
-  ```html
+  ```js
       <script>
           $(document).ready(function(){
               $("#mycarousel").carousel( { interval: 2000 } );
@@ -75,6 +75,5 @@
   ```
 
 * 
-
 
 
