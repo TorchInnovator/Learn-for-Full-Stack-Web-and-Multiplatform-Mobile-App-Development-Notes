@@ -1,6 +1,6 @@
 # Less and Sass
 
-* ### Adding Less Variables
+* Adding Less Variables
 
   ```less
   @lt-gray: #ddd;
@@ -13,13 +13,14 @@
 
   ```
 
-* ### Less Mixins
+* Less Mixins
 
   ```less
   .zero-margin (@pad-up-dn: 0px, @pad-left-right: 0px) {
   	margin:0px auto;
   	padding: @pad-up-dn @pad-left-right;
   }
+
   .row-header{
       .zero-margin();
   }
@@ -62,16 +63,46 @@
       border-bottom: 1px solid @lt-gray;
       padding: 10px;
   }
+
   ```
 
-  
+* Nesting Selectors
 
+  ```less
+  .carousel {
+      background:@background-dark;
 
-* ### Nesting Selectors
-* 
+      .carousel-item {
+          height: @carousel-item-height;
+          img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              min-height: 300px;
+          }
+      }
+  }
 
-* ### Installing and using the lessc Compiler
-* 
+  #carouselButton {
+      right:0px;
+      position: absolute;
+      bottom: 0px;
+  }
+  ```
+
+* Installing and using the lessc Compiler
+
+  * install
+
+    ```
+    npm install -g less@2.7.2
+    ```
+
+  * convert less to css
+
+    ```
+    lessc styles.less styles.css
+    ```
 
 
 
