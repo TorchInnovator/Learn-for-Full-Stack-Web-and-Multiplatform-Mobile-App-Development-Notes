@@ -1,7 +1,7 @@
 # NPM Scripts Part 1
 
 * create `scripts.js` file
-* Open index.html and move Jquery script to` scripts.js`
+* Open index.html and move Jquery script to`scripts.js`
   ```
   $(document).ready(function () {
       $('[data-toggle="tooltip"]').tooltip();
@@ -22,6 +22,22 @@
   });
   ```
 * update index.html to include the `scripts.js`
+* Add Watching for Changes and Parallelshell
+  * install NPM packages:
+    ```
+    npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
+    ```
+  * Add script item to package.json
+    ```
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+    "start": "npm run watch:all",
+    ```
+
+  * Start watching for changes SCSS file, compile it to Css and run server:
+    ```
+    npm start
+    ```
 
 
 
