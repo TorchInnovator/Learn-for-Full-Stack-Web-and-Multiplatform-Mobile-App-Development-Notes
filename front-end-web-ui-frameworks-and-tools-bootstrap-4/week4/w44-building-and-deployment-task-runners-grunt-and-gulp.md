@@ -77,7 +77,107 @@
 
 * Watch and Serve Tasks
 
-  * 
+  * install
+
+    ```
+    npm install grunt-contrib-watch@1.0.0 --save-dev
+    npm install grunt-browser-sync@2.2.0 --save-dev
+    ```
+
+  * Add browser-sync and watch tasks in Grunt file:
+
+    ```
+    ,
+            watch: {
+                files: 'css/*.scss',
+                tasks: ['sass']
+            },
+            browserSync: {
+                dev: {
+                    bsFiles: {
+                        src : [
+                            'css/*.css',
+                            '*.html',
+                            'js/*.js'
+                        ]
+                    },
+                    options: {
+                        watchTask: true,
+                        server: {
+                            baseDir: "./"
+                        }
+                    }
+                }
+            }
+    ```
+
+  * And add this code in Grunt file:
+
+    ```
+        grunt.registerTask('default', ['browserSync', 'watch']);
+    ```
+
+  * Next run this command than it will start server and open on the web page, I also keep a watch on the files in the css folder, if you update any of them , it will show in cmd
+
+    ```
+    grunt
+    ```
+
+![](/assets/W4_4watchAndServeTasks.png)
+
+---
+
+# Grunt Part 2
+
+### Copying the Files and Cleaning Up the Dist Folder
+
+* Install Grunt module to copy over files to a distribution floder\(dist\),and clean up the dist folder when we needed.
+  ```
+  npm install grunt-contrib-copy --save-dev
+  npm install grunt-contrib-clean --save-dev
+  ```
+
+
+
+* THen add following this code to perform the copy files to the dist folder and cleaning up the dist folder
+  ```
+  ,
+
+          copy: {
+              html: {
+                  files: [
+                  {
+                      //for html
+                      expand: true,
+                      dot: true,
+                      cwd: './',
+                      src: ['*.html'],
+                      dest: 'dist'
+                  }]                
+              },
+              fonts: {
+                  files: [
+                  {
+                      //for font-awesome
+                      expand: true,
+                      dot: true,
+                      cwd: 'node_modules/font-awesome',
+                      src: ['fonts/*.*'],
+                      dest: 'dist'
+                  }]
+              }
+          },
+
+          clean: {
+              build: {
+                  src: [ 'dist/']
+              }
+          }
+  ```
+* 
+### Compressing and Minifying Images
+
+* 
 
 
 
