@@ -56,5 +56,55 @@
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     ```
 
+* Compressing and Minifying Images:
+  * install imagemin-cli npm module
+    * help us to compress img to reduce the size
+
+    ```
+    npm -g install imagemin-cli@3.0.0
+    ```
+  * set up the script \(package.json\)
+    ```
+    "imagemin": "imagemin img/* -o dist/img",
+    ```
+
+* Preparing the Distribution Folder
+  * add don't want the dist folder to checked into the git repository.
+    ```
+    node_modules
+    dist
+    ```
+  * install usemin-cli, cssmin, uglifyjs and htmlmin NPM packages
+    ```
+    npm install --save-dev usemin-cli@0.5.1 cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7
+    ```
+  * set up the script\(package.json\)
+
+    ```
+        "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+        "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"  
+    ```
+
+  * Add css links inclusion code in index.html, about.html and contactus.html
+
+    ```
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+    ```
+
+  * Last npm run build
+
+    * `npm run build`
+
 
 
