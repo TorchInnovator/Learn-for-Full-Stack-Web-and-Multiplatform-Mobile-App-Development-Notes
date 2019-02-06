@@ -23,11 +23,13 @@
   ```
 * update index.html to include the `scripts.js`
 * Add Watching for Changes and Parallelshell
+
   * install NPM packages:
     ```
     npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
     ```
   * Add script item to package.json
+
     ```
     "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
     "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
@@ -35,8 +37,23 @@
     ```
 
   * Start watching for changes SCSS file, compile it to Css and run server:
+
     ```
     npm start
+    ```
+
+---
+
+# NPM Scripts Part 2
+
+* Cleaning up a Distribution Folder
+  * install rimraf npm module:
+    ```
+    npm install --save-dev rimraf@2.6.2
+    ```
+  * set up the script \(package.json\):
+    ```
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     ```
 
 
