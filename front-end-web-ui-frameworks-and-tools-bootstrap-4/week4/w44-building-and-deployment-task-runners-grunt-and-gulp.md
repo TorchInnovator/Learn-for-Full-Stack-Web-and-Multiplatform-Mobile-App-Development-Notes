@@ -238,7 +238,6 @@ imagemin:dynamic                493ms  █████████████�
 Total 977ms
 ```
 
-* 
 ### Preparing the Distribution Folder and Files
 
 * Install Grunt usemin module together \(concat, cssmin, uglify and filerev\)
