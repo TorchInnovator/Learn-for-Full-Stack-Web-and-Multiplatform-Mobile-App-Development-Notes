@@ -374,61 +374,61 @@ Total 977ms
 
 * run Grunt
 
-  ```
-  grunt build
-  Running "clean:build" (clean) task
-  >> 1 path cleaned.
+```
+grunt build
+Running "clean:build" (clean) task
+>> 1 path cleaned.
 
-  Running "copy:html" (copy) task
-  Copied 3 files
+Running "copy:html" (copy) task
+Copied 3 files
 
-  Running "copy:fonts" (copy) task
-  Copied 6 files
+Running "copy:fonts" (copy) task
+Copied 6 files
 
-  Running "imagemin:dynamic" (imagemin) task
-  Minified 4 images (saved 21.8 kB - 17.5%)
+Running "imagemin:dynamic" (imagemin) task
+Minified 4 images (saved 21.8 kB - 17.5%)
 
-  Running "useminPrepare:foo" (useminPrepare) task
-  Configuration changed for cssmin, uglify
+Running "useminPrepare:foo" (useminPrepare) task
+Configuration changed for cssmin, uglify
 
-  Running "concat:dist" (concat) task
+Running "concat:dist" (concat) task
 
-  Running "cssmin:dist" (cssmin) task
-  >> No files created.
+Running "cssmin:dist" (cssmin) task
+>> No files created.
 
-  Running "cssmin:generated" (cssmin) task
-  >> 1 file created. 204.87 kB → 203.74 kB
+Running "cssmin:generated" (cssmin) task
+>> 1 file created. 204.87 kB → 203.74 kB
 
-  Running "uglify:dist" (uglify) task
-  >> No files created.
+Running "uglify:dist" (uglify) task
+>> No files created.
 
-  Running "uglify:generated" (uglify) task
-  >> 1 file created 253.81 kB → 186.14 kB
+Running "uglify:generated" (uglify) task
+>> 1 file created 253.81 kB → 186.14 kB
 
-  Running "filerev:release" (filerev) task
-  Revved 2 files
+Running "filerev:release" (filerev) task
+Revved 2 files
 
-  Running "usemin:html" (usemin) task
-  Replaced 3 references to assets
+Running "usemin:html" (usemin) task
+Replaced 3 references to assets
 
-  Running "htmlmin:dist" (htmlmin) task
-  Minified 3 files
+Running "htmlmin:dist" (htmlmin) task
+Minified 3 files
 
-  Done.
+Done.
 
 
-  Execution Time (2019-02-06 21:06:20 UTC+8)
-  copy:fonts                       57ms  █ 1%
-  loading grunt-contrib-imagemin  301ms  █████ 7%
-  imagemin:dynamic                494ms  █████████ 11%
-  loading grunt-contrib-cssmin    136ms  ███ 3%
-  cssmin:generated                623ms  ███████████ 14%
-  loading grunt-contrib-uglify     59ms  █ 1%
-  uglify:generated                 2.2s  ████████████████████████████████████ 51%
-  loading grunt-contrib-htmlmin   222ms  ████ 5%
-  Total 4.3s
+Execution Time (2019-02-06 21:06:20 UTC+8)
+copy:fonts                       57ms  █ 1%
+loading grunt-contrib-imagemin  301ms  █████ 7%
+imagemin:dynamic                494ms  █████████ 11%
+loading grunt-contrib-cssmin    136ms  ███ 3%
+cssmin:generated                623ms  ███████████ 14%
+loading grunt-contrib-uglify     59ms  █ 1%
+uglify:generated                 2.2s  ████████████████████████████████████ 51%
+loading grunt-contrib-htmlmin   222ms  ████ 5%
+Total 4.3s
 
-  ```
+```
 
 
 
