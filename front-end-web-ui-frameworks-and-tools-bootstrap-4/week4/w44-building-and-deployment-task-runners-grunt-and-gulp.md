@@ -28,6 +28,7 @@
     ```
 
 * Compilling SCSS to CSS
+
   * install Grunt module:
 
     * grunt-sass : Set up the Grunt modules to converts the SCSS code to CSS
@@ -66,10 +67,15 @@
     };
     ```
 
+  * run the grunt SASS task
+
+    ```
+    grunt css
+    ```
+
+* Watch and Serve Tasks
+
   * 
 
-
-
-* 
 
 
