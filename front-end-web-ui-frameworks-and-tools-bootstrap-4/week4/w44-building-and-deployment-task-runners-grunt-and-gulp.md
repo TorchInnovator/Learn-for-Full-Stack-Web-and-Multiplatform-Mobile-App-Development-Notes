@@ -73,6 +73,8 @@
     grunt css
     ```
 
+  * Demo![](/assets/W4_4gruntCSS.png)
+
 * Watch and Serve Tasks
 
   * 
