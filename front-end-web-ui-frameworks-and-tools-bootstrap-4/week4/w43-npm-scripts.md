@@ -47,6 +47,7 @@
 # NPM Scripts Part 2
 
 * Cleaning up a Distribution Folder
+
   * install rimraf npm module:
     ```
     npm install --save-dev rimraf@2.6.2
@@ -57,18 +58,22 @@
     ```
 
 * Compressing and Minifying Images:
+
   * install imagemin-cli npm module
+
     * help us to compress img to reduce the size
 
     ```
     npm -g install imagemin-cli@3.0.0
     ```
+
   * set up the script \(package.json\)
     ```
     "imagemin": "imagemin img/* -o dist/img",
     ```
 
 * Preparing the Distribution Folder
+
   * add don't want the dist folder to checked into the git repository.
     ```
     node_modules
@@ -82,7 +87,7 @@
 
     ```
         "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-        "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"  
+        "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
     ```
 
   * Add css links inclusion code in index.html, about.html and contactus.html
