@@ -132,6 +132,7 @@
 ### Copying the Files and Cleaning Up the Dist Folder
 
 * Install Grunt module to copy over files to a distribution floder\(dist\),and clean up the dist folder when we needed.
+
   ```
   npm install grunt-contrib-copy --save-dev
   npm install grunt-contrib-clean --save-dev
@@ -210,37 +211,34 @@
 
   * Run this command:
 
-    ```
-    grunt build
-    Running "clean:build" (clean) task
-    >> 1 path cleaned.
+```
+grunt build
+Running "clean:build" (clean) task
+>> 1 path cleaned.
 
-    Running "copy:html" (copy) task
-    Copied 3 files
+Running "copy:html" (copy) task
+Copied 3 files
 
-    Running "copy:fonts" (copy) task
-    Copied 6 files
+Running "copy:fonts" (copy) task
+Copied 6 files
 
-    Running "imagemin:dynamic" (imagemin) task
-    Minified 4 images (saved 21.8 kB - 17.5%)
+Running "imagemin:dynamic" (imagemin) task
+Minified 4 images (saved 21.8 kB - 17.5%)
 
-    Done.
-
-
-    Execution Time (2019-02-06 20:01:22 UTC+8)
-    loading grunt-contrib-clean      12ms  █ 1%
-    clean:build                      29ms  ███ 3%
-    copy:html                        24ms  ██ 2%
-    copy:fonts                      101ms  ████████ 10%
-    loading grunt-contrib-imagemin  306ms  ██████████████████████ 31%
-    imagemin:dynamic                493ms  ████████████████████████████████████ 50%
-    Total 977ms
-    ```
-
-  * 
+Done.
 
 
+Execution Time (2019-02-06 20:01:22 UTC+8)
+loading grunt-contrib-clean      12ms  █ 1%
+clean:build                      29ms  ███ 3%
+copy:html                        24ms  ██ 2%
+copy:fonts                      101ms  ████████ 10%
+loading grunt-contrib-imagemin  306ms  ██████████████████████ 31%
+imagemin:dynamic                493ms  ████████████████████████████████████ 50%
+Total 977ms
+```
 
+* 
 ### Preparing the Distribution Folder and Files
 
 * Install Grunt usemin module together \(concat, cssmin, uglify and filerev\)
@@ -290,7 +288,7 @@
               options: {
                   separator: ';'
               },
-  
+
               // dist configuration is provided by useminPrepare
               dist: {}
           },
@@ -312,7 +310,7 @@
                   algorithm: 'md5',
                   length: 20
               },
-  
+
               release: {
               // filerev:release hashes(md5) all assets (images, js and css )
               // in dist directory
@@ -324,7 +322,7 @@
                   }]
               }
           },
-  
+
           // Usemin
           // Replaces all assets with their revved version in html and css files.
           // options.assetDirs contains the directories for finding the assets
@@ -375,5 +373,6 @@
       ]);
   ```
 
+* 
 
 
