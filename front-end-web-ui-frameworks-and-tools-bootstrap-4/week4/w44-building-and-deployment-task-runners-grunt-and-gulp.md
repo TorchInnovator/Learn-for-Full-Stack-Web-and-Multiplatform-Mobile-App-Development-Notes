@@ -73,7 +73,9 @@
     grunt css
     ```
 
-  * Demo![](/assets/W4_4gruntCSS.png)
+  * Demo
+
+  * ![](/assets/W4_4gruntCSS.png)
 
 * Watch and Serve Tasks
 
@@ -427,7 +429,6 @@ loading grunt-contrib-uglify     59ms  █ 1%
 uglify:generated                 2.2s  ████████████████████████████████████ 51%
 loading grunt-contrib-htmlmin   222ms  ████ 5%
 Total 4.3s
-
 ```
 
 
