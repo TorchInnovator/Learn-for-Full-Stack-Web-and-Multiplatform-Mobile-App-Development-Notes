@@ -431,5 +431,93 @@ loading grunt-contrib-htmlmin   222ms  ████ 5%
 Total 4.3s
 ```
 
+---
+
+### Installing Gulp
+
+* Install Gulp command-line interface \(CLI\)
+
+```
+npm install -g gulp-cli
+```
+
+* Install Gulp in your project
+
+```
+npm install gulp --save-dev
+```
+
+### Install Gulp Plugins for SASS and Browser-Sync
+
+* Install all the Gulp plugins that we need
+
+```
+npm install gulp-sass  browser-sync --save-dev
+```
+
+### Creating a Gulp File
+
+* create gulpfile.js
+
+### Loading Gulp Plugins
+
+* Load in all the Gulp plugin in the Gulp file
+
+```
+'use strict';
+
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync');
+
+```
+
+### Adding Gulp Tasks for SASS and Browser-Sync
+
+* Add the SASS task , Browser-Sync task and default task
+
+```
+ 
+gulp.task('sass', function () {
+  return gulp.src('./css/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./css/*.scss', ['sass']);
+});
+
+gulp.task('browser-sync', function () {
+   var files = [
+      './*.html',
+      './css/*.css',
+      './img/*.{png,jpg,gif}',
+      './js/*.js'
+   ];
+
+   browserSync.init(files, {
+      server: {
+         baseDir: "./"
+      }
+   });
+
+});
+
+// Default task
+gulp.task('default', ['browser-sync'], function() {
+    gulp.start('sass:watch');
+});
+
+```
+
+### Running the Gulp Tasks
+
+* run command gulp
+
+```
+gulp
+```
+
 
 
