@@ -62,11 +62,15 @@
 
 [Front-End JavaScript Frameworks: Angular](https://www.coursera.org/learn/angular?specialization=full-stack-mobile-app-development)
 
+* [Week1](front-end-javascript-frameworks-angular/week1.md)
+
+  * [W1\_1-Introduction to Angular](front-end-javascript-frameworks-angular/week1/w1-introduction-to-angular.md)
+
+  * [W1\_2-Angular Components](front-end-javascript-frameworks-angular/week1/w12-angular-components.md)
+
 [Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova](https://www.coursera.org/learn/ionic-cordova?specialization=full-stack-mobile-app-development)
 
 [Multiplatform Mobile App Development with NativeScript](https://www.coursera.org/learn/nativescript?specialization=full-stack-mobile-app-development)
 
 [Server-side Development with NodeJS, Express and MongoDB](https://www.coursera.org/learn/server-side-nodejs)
-
-
 
