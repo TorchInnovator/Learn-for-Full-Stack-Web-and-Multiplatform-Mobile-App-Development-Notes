@@ -148,25 +148,25 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 @NgModule({
-  
+
   . . . 
-  
+
   imports: [ 
-    
+
     . . .,
-    
+
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule
-    
+
   ], 
-    
+
     . . . 
-  
-  
+
+
 }) 
 
-. . . 
+. . .
 ```
 
 ### Adding a Material Toolbar
@@ -190,9 +190,11 @@ body {
   padding: 0; 
   margin: 0; 
   font-family: Roboto, sans-serif; 
-  
+
 }
 ```
+
+* Demo![](/assets/L2W1IntroductionStyleCss.png)
 
 
 
