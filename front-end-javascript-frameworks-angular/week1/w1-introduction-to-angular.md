@@ -50,7 +50,7 @@
 
 ### Installing_Angular-CLI_
 
-* install _angular-cli_globally
+* install \_angular-cli\_globally
 
 ```
 npm install -g @angular/cli
@@ -78,12 +78,11 @@ vailable Commands:
   xi18n Extracts i18n messages from source code.
 
 For more detailed help run "ng [command name] --help"
-
 ```
 
 ### Generating and Serving an Angular Project using Angular-CLI
 
-* create a folder named _Angular _and move into that folder.
+* create a folder named \_Angular \_and move into that folder.
 
 ```
 mkdir Angular
@@ -100,6 +99,99 @@ ng new conFusion --style=scss
 
 ```
 ng serve --open
+```
+
+---
+
+# Configuring your Angular Application
+
+### Configure your Angular Project to use Angular Material
+
+* To configure project to use Angular material, install Angular Materia, Angular Animations and HammerJS
+
+```
+npm install @angular/material@6.4.7 --save
+npm install @angular/cdk@6.4.7 --save
+npm install --save @angular/animations@6.1.7
+npm install --save hammerjs@2.0.8
+```
+
+### Configure to use Material Design Icons
+
+* add Material Design icons in &lt;head&gt;
+
+```
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### Configure your Angular Project to use Flex Layout
+
+* Install Angular Flex Layout
+
+```
+npm install --save @angular/flex-layout@6.0.0-beta.18
+```
+
+### Updating AppModule
+
+* import the Angular Animation Module, Angular Material Toolbar Module, Flex Layout Module and hammerjs into your root module \(src/app/app.module.ts\)
+
+```
+. . . 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+. . . 
+
+import 'hammerjs';
+
+@NgModule({
+  
+  . . . 
+  
+  imports: [ 
+    
+    . . .,
+    
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    FlexLayoutModule
+    
+  ], 
+    
+    . . . 
+  
+  
+}) 
+
+. . . 
+```
+
+### Adding a Material Toolbar
+
+* In app.component.html and replace its contents 
+
+```
+<mat-toolbar color="primary"> <span>Ristorante Con Fusion</span> </mat-toolbar>
+```
+
+### Adding Styles
+
+* Add styles to styles.scss file
+
+```
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// some basic resets 
+
+body { 
+  padding: 0; 
+  margin: 0; 
+  font-family: Roboto, sans-serif; 
+  
+}
 ```
 
 
