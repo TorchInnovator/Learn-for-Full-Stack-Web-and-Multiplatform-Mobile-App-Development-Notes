@@ -24,5 +24,6 @@
     * [W4\_4-Building and Deployment: Task Runners: Grunt and Gulp](front-end-web-ui-frameworks-and-tools-bootstrap-4/week4/w44-building-and-deployment-task-runners-grunt-and-gulp.md)
 * [Front-End JavaScript Frameworks: Angular](front-end-javascript-frameworks-angular.md)
   * [Week1](front-end-javascript-frameworks-angular/week1.md)
-    * [W1-Introduction to Angular](front-end-javascript-frameworks-angular/week1/w1-introduction-to-angular.md)
+    * [W1\_1-Introduction to Angular](front-end-javascript-frameworks-angular/week1/w1-introduction-to-angular.md)
+    * [W1\_2-Angular Components](front-end-javascript-frameworks-angular/week1/w12-angular-components.md)
 
