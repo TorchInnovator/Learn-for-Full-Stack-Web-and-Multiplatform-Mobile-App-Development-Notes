@@ -1,9 +1,14 @@
-# Angular Components
+# Angular Components Overview
+
+![](/assets/L2W1_2Component.png)![](/assets/L2W1_2ComponentHierarchy.png)
+
+---
+
+## Angular Components Part 1
 
 ### Adding a Menu Component
 
-* download the images.zip file
-
+* ### download the images.zip file
 * Move the resulting \_images \_folder containing some PNG files to the Angular project's \_src/assets \_folder
 
 * use the CLI's \_ng generate \_command to generate a new component named menu
@@ -98,7 +103,6 @@ export class MenuComponent implements OnInit {
    ];
 . . .
 }
-
 ```
 
 * update the menu.component.html template
@@ -151,6 +155,20 @@ import { MatListModule } from '@angular/material/list';
 * Demo
 
 ![](/assets/L2W1_2Demo2.png)
+
+---
+
+## 
+
+## Angular Components Part 2
+
+### Updating the Menu Template
+
+* 
+
+### Add a Card Component
+
+* 
 
 
 
