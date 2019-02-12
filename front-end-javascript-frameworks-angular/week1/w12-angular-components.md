@@ -164,10 +164,111 @@ import { MatListModule } from '@angular/material/list';
 
 ### Updating the Menu Template
 
-* ### 
+* update menu.component.html
+
+```
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let dish of dishes">
+        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+          <h1>{{dish.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>
+```
+
+* update app.module.ts
+
+```
+. . .
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
+. . .
+
+  imports: [
+    . . .,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    . . .
+  ],
+
+. . .
+```
+
+* Demo
+
+![](/assets/L2W1_2MenuTemplateDemo3.png)
+
+* update menu.component.ts file
+
+```
+ . . .
+ 
+ const DISHES: Dish[] = [
+ . . .
+ 
+ ];
+ 
+ . . .
+ 
+ export class MenuComponent implements OnInit {
+
+  dishes = DISHES;
+
+  selectedDish = DISHES[0];
+
+ . . .
+ 
+ }
+```
 
 ### Add a Card Component
 
-* 
+* update menu.component.html template
+
+```
+  <div fxFlex *ngIf="selectedDish">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{selectedDish.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
+      <mat-card-content>
+        <p>{{selectedDish.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+```
+
+* Demo
+
+![](/assets/L2W1_2finalDM.png)
+
 
 
