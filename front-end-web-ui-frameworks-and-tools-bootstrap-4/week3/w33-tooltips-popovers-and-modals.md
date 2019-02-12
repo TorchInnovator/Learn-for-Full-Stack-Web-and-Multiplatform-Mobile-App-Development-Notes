@@ -1,26 +1,41 @@
-# Tooltips and Modals
+### Tooltips, Popovers and Modals
 
 * Adding a Tooltip
-  * Add tooltip to the "Reseve Table" button 
+
+  * In index.html we add a tooltip to the "Reserve Table"
 
   ```html
   <a role="button" class="btn btn-block nav-link btn-warning"
-  data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>"
-  data-placement="bottom" href="#reserveform">Reserve Table</a>
+      data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+      data-placement="bottom" href="#reserveform">Reserve Table</a>
   ```
 
-  * And add a javascript function
+  * Now we add js function\(data-toggle="tooltip"\) to make action
 
   ```html
-      <script>
-          $(document).ready(function(){
-              $('[data-toggle="tooltip"]').tooltip();
-          });
-      </script>
+  <script>
+      $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+      });
+  </script>
   ```
 
+  * Demo
+
+  ![](/assets/W3_3Tooltip.png)
+
 * Adding a Modal
-  * To set up the modal \(loginModal\)
+
+  * Create &lt;span&gt; on the right side of navbar to trigger the display of the modal \(\#loginModal\)
+
+  ```
+                  <span class="navbar-text">
+                      <a data-toggle="modal" data-target="#loginModal">
+                      <span class="fa fa-sign-in"></span> Login</a>
+                  </span>
+  ```
+
+  * Set up the modal then that can get link and show on the webpage
 
   ```html
       <div id="loginModal" class="modal fade" role="dialog">
@@ -61,14 +76,7 @@
       </div>
   ```
 
-  * And link on the right side of the navbar to trigger the display
+* Demo
 
-```html
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>
-```
-
-
+![](/assets/W3_3loginModal.png)
 
