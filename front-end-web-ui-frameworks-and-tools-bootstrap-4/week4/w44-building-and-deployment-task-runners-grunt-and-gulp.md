@@ -433,6 +433,8 @@ Total 4.3s
 
 ---
 
+# Gulp Part 1
+
 ### Installing Gulp
 
 * Install Gulp command-line interface \(CLI\)
@@ -469,7 +471,6 @@ npm install gulp-sass  browser-sync --save-dev
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync');
-
 ```
 
 ### Adding Gulp Tasks for SASS and Browser-Sync
@@ -477,7 +478,6 @@ var gulp = require('gulp'),
 * Add the SASS task , Browser-Sync task and default task
 
 ```
- 
 gulp.task('sass', function () {
   return gulp.src('./css/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -508,7 +508,6 @@ gulp.task('browser-sync', function () {
 gulp.task('default', ['browser-sync'], function() {
     gulp.start('sass:watch');
 });
-
 ```
 
 ### Running the Gulp Tasks
@@ -517,6 +516,24 @@ gulp.task('default', ['browser-sync'], function() {
 
 ```
 gulp
+gulp
+[11:48:22] Using gulpfile D:\Downloads\FullStackHW\Week4\gulpfile.js
+[11:48:22] Starting 'browser-sync'...
+[11:48:22] Finished 'browser-sync' after 94 ms
+[11:48:22] Starting 'default'...
+[11:48:22] Starting 'sass:watch'...
+[11:48:22] Finished 'sass:watch' after 11 ms
+[11:48:22] Finished 'default' after 12 ms
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.0.103:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://localhost:3001
+ --------------------------------------
+[Browsersync] Serving files from: ./
+[Browsersync] Watching files...
 ```
 
 
