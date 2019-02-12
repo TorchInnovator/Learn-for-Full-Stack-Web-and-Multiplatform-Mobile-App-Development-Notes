@@ -4,7 +4,7 @@
 
 * [W1\_2-Angular Components](front-end-javascript-frameworks-angular/week1/w12-angular-components.md)
 
-
+* [W1Assignment1](front-end-javascript-frameworks-angular/week1/w1assignment1.md)
 
 
 
