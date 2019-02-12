@@ -2,6 +2,23 @@
 
 ![](/assets/L2W1_2Component.png)![](/assets/L2W1_2ComponentHierarchy.png)
 
+*  Structural Directives
+  *  Allows you to alter the layout by adding, removing and replacing elements in DOM
+
+  *  Apply a structural directive to a host element in the DOM and its descendents
+
+  * Common:
+
+    *  NgIf 
+
+    * NgFor
+
+    * NgSwitch
+
+ 
+
+ 
+
 ---
 
 ## Angular Components Part 1
@@ -222,14 +239,14 @@ import { MatButtonModule } from '@angular/material/button';
 
 ```
  . . .
- 
+
  const DISHES: Dish[] = [
  . . .
- 
+
  ];
- 
+
  . . .
- 
+
  export class MenuComponent implements OnInit {
 
   dishes = DISHES;
@@ -237,7 +254,7 @@ import { MatButtonModule } from '@angular/material/button';
   selectedDish = DISHES[0];
 
  . . .
- 
+
  }
 ```
 
@@ -269,6 +286,4 @@ import { MatButtonModule } from '@angular/material/button';
 * Demo
 
 ![](/assets/L2W1_2finalDM.png)
-
-
 
