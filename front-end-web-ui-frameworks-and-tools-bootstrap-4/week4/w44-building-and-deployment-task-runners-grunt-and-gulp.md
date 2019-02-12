@@ -351,7 +351,7 @@ Total 977ms
 
 * Next update jit-grunt conf
 
-  ```
+  ```js
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin'
   });
@@ -359,7 +359,7 @@ Total 977ms
 
 * update build task
 
-  ```
+  ```js
       grunt.registerTask('build', [
           'clean',
           'copy',
@@ -477,7 +477,7 @@ var gulp = require('gulp'),
 
 * Add the SASS task , Browser-Sync task and default task
 
-```
+```js
 gulp.task('sass', function () {
   return gulp.src('./css/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -539,7 +539,143 @@ gulp
 
 # Gulp Part 2
 
-# [ ](https://www.coursera.org/learn/bootstrap-4/discussions/weeks/4)
+### [ ](https://www.coursera.org/learn/bootstrap-4/discussions/weeks/4)Copying the Files and Cleaning up the Dist Folder
+
+* create tasks for copying the font files and cleaning up the distribution folder.
+
+```
+npm install del --save-dev
+```
+
+* require it in the Gulp files
+
+```js
+del = require('del'),
+```
+
+* add clean task and copyfonts
+
+```js
+// Clean
+gulp.task('clean', function() {
+    return del(['dist']);
+});
+
+gulp.task('copyfonts', function() {
+   gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof,svg}*')
+   .pipe(gulp.dest('./dist/fonts'));
+});
+```
+
+### Compressing and Minifying Images
+
+* install the gulp-imagemin plugin
+
+```
+npm install gulp-imagemin --save-dev
+```
+
+* configure the imagemin task
+
+```
+imagemin = require('gulp-imagemin'),
+```
+
+* create imagemin task in gulp.js
+
+```js
+// Images
+gulp.task('imagemin', function() {
+  return gulp.src('img/*.{png,jpg,gif}')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('build',['clean'], function(){
+    gulp.start('copyfonts', 'imagemin');
+});
+```
+
+* run guip build
+
+```
+gulp build
+[12:13:10] Using gulpfile D:\Downloads\FullStackHW\Week4\gulpfile.js
+[12:13:10] Starting 'clean'...
+[12:13:10] Finished 'clean' after 11 ms
+[12:13:10] Starting 'build'...
+[12:13:10] Starting 'copyfonts'...
+[12:13:10] Finished 'copyfonts' after 6.29 ms
+[12:13:10] Starting 'imagemin'...
+[12:13:10] Finished 'build' after 12 ms
+[12:13:10] gulp-imagemin: Minified 4 images (saved 21.8 kB - 17.5%)
+[12:13:10] Finished 'imagemin' after 535 ms
+```
+
+### 
+
+### Preparing the Distribution Folder and Files
+
+* install gulp-gulp-usemin and other Gulp plugins
+
+```
+npm install gulp-uglify@3.0.0 gulp-usemin@0.3.29 gulp-rev@8.1.1 gulp-clean-css@3.9.3 gulp-flatmap@1.0.2 gulp-htmlmin@4.0.0 --save-dev
+
+```
+
+* configure these task
+
+```js
+var ...
+    uglify = require('gulp-uglify'),
+    usemin = require('gulp-usemin'),
+    rev = require('gulp-rev'),
+    cleanCss = require('gulp-clean-css'),
+    flatmap = require('gulp-flatmap'),
+    htmlmin = require('gulp-htmlmin');
+```
+
+* create usemin and  the build task
+
+```
+gulp.task('usemin', function() {
+  return gulp.src('./*.html')
+  .pipe(flatmap(function(stream, file){
+      return stream
+        .pipe(usemin({
+            css: [ rev() ],
+            html: [ function() { return htmlmin({ collapseWhitespace: true })} ],
+            js: [ uglify(), rev() ],
+            inlinejs: [ uglify() ],
+            inlinecss: [ cleanCss(), 'concat' ]
+        }))
+    }))
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('build',['clean'], function() {
+    gulp.start('copyfonts','imagemin','usemin');
+});
+
+```
+
+### Running the Gulp Tasks
+
+```
+gulp build
+[12:22:54] Using gulpfile D:\Downloads\FullStackHW\Week4\gulpfile.js
+[12:22:54] Starting 'clean'...
+[12:22:54] Finished 'clean' after 8.51 ms
+[12:22:54] Starting 'build'...
+[12:22:54] Starting 'copyfonts'...
+[12:22:54] Finished 'copyfonts' after 7.52 ms
+[12:22:54] Starting 'imagemin'...
+[12:22:54] Starting 'usemin'...
+[12:22:54] Finished 'build' after 14 ms
+[12:22:58] Finished 'usemin' after 4.36 s
+[12:22:59] gulp-imagemin: Minified 4 images (saved 21.8 kB - 17.5%)
+[12:22:59] Finished 'imagemin' after 4.5 s
+```
 
 
 
