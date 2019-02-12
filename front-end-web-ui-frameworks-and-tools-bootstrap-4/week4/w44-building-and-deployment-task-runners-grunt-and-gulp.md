@@ -490,7 +490,6 @@ gulp.task('sass:watch', function () {
 
 gulp.task('browser-sync', function () {
    var files = [
-      './*.html',
       './css/*.css',
       './img/*.{png,jpg,gif}',
       './js/*.js'
@@ -535,6 +534,12 @@ gulp
 [Browsersync] Serving files from: ./
 [Browsersync] Watching files...
 ```
+
+---
+
+# Gulp Part 2
+
+# [ ](https://www.coursera.org/learn/bootstrap-4/discussions/weeks/4)
 
 
 
