@@ -103,7 +103,8 @@
   * The interfaces
   * The injector
 
-*  Angular and DI
+* Angular and DI
+
   * Separation of business logic and dependency construction
   * The dependency is passed to the object consuming it where it is needed
   * Angular injector subsystem is responsible for:
@@ -127,7 +128,7 @@ CREATE src/app/services/dish.service.spec.ts (323 bytes)
 CREATE src/app/services/dish.service.ts (133 bytes)
 ```
 
-* update `dish.service.ts `file
+* update `dish.service.ts`file
 
 ```ts
 . . .
@@ -156,12 +157,37 @@ import { DishService } from './services/dish.service';
   providers: [DishService],
 
 . . .
-
 ```
 
 ### Using the Service
 
-* 
+* update `menu.component.ts` file
+
+```
+. . .
+
+import { DishService } from '../services/dish.service';
+
+. . .
+
+export class MenuComponent implements OnInit {
+
+  dishes: Dish[];
+
+  selectedDish: Dish;
+
+  constructor(private dishService: DishService) { }
+  
+  ngOnInit() {
+    this.dishes = this.dishService.getDishes();
+  }
+
+. . .
+
+}
+```
+
+* Demo
 
 
 
