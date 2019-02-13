@@ -28,6 +28,7 @@
     * [W1\_2-Angular Components](front-end-javascript-frameworks-angular/week1/w12-angular-components.md)
     * [W1Assignment1](front-end-javascript-frameworks-angular/week1/w1assignment1.md)
   * [Week2](front-end-javascript-frameworks-angular/week2.md)
-    * [W2\_1Data Binding](front-end-javascript-frameworks-angular/week2/w21data-binding.md)
-    * [W2\_2Angular Service Basics](front-end-javascript-frameworks-angular/week2/w22angular-service-basics.md)
+    * [W2\_1-Data Binding](front-end-javascript-frameworks-angular/week2/w21data-binding.md)
+    * [W2\_2-Angular Service Basics](front-end-javascript-frameworks-angular/week2/w22angular-service-basics.md)
+    * [W2\_3-Angular Routing](front-end-javascript-frameworks-angular/week2/w23-angular-routing.md)
 

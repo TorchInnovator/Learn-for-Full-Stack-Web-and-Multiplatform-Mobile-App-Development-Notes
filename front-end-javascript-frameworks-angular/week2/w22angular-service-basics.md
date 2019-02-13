@@ -187,7 +187,7 @@ export class MenuComponent implements OnInit {
 }
 ```
 
-* Demo
+
 
 
 
