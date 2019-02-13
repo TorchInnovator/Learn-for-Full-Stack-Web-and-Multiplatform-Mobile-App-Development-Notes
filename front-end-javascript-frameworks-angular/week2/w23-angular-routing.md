@@ -258,9 +258,7 @@ $divider-color:        #BDBDBD;
 
 ---
 
-```
-Angular Routing Basics
-```
+## Angular Routing Basics
 
 ### Adding Components
 
