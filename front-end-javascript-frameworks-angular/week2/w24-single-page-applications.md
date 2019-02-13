@@ -83,37 +83,75 @@
 
 * Update the `routes.ts`file to add in the configuration for the contact component
 
+```
+
+```
+
 * Update the`header.component.html`
+
+```
+
+```
 
 ### Updating the Home Component
 
 * update the dish service to return a specific dish
 
+```
+
+```
+
 * add promotion.ts file
+
+```
+
+```
 
 * add promotions.ts file
 
+```
+
+```
+
 * add a new service named "promotion" to the services folder
+
+```
+
+```
 
 * update the promotion.service.ts
 
+```
+
+```
+
 * Import the promotion service into the AppModule and add the service to the providers.
+
 * Update the home.component.html
+
+```
+
+```
 
 * update the home.component.ts file
 
+```
 
+```
 
 ### Highlighting the Current Component Link in the Toolbar
 
 * Update each of the links in the toolbar
 
+```
+
+```
+
 * Add scss class to header.component.scss
 
+```
 
+```
 
-Demo  
-
-
-
+Demo
 
