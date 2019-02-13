@@ -293,6 +293,8 @@ UPDATE src/app/app.module.ts (1554 bytes)
 
 ```
 ng generate module app-routing
+CREATE src/app/app-routing/app-routing.module.spec.ts (308 bytes)
+CREATE src/app/app-routing/app-routing.module.ts (194 bytes)
 ```
 
 * create a new file named \_routes.ts \_in the \_app-routing \_folder
