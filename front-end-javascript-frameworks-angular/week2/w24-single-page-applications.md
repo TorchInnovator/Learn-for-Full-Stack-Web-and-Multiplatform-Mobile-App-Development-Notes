@@ -102,59 +102,169 @@
 * update the dish service to return a specific dish
 
 ```
+. . .
 
+  getDish(id: string): Dish {
+    return DISHES.filter((dish) => (dish.id === id))[0];
+  }
+
+  getFeaturedDish(): Dish {
+    return DISHES.filter((dish) => dish.featured)[0];
+  }
+  
+. . .
 ```
 
-* add promotion.ts file
+* add `promotion.ts` file
 
+```ts
+export class Promotion {
+    id: string;
+    name: string;
+    image: string;
+    label: string;
+    price: string;
+    featured: boolean;
+    description: string;
+}
 ```
 
-```
+* add `promotions.ts` file
 
-* add promotions.ts file
+```ts
+import { Promotion } from './promotion';
 
-```
+export const PROMOTIONS: Promotion[] = [
+    {
+      id: '0',
+      name: 'Weekend Grand Buffet',
+      image: '/assets/images/buffet.png',
+      label: 'New',
+      price: '19.99',
+      featured: true,
+      // tslint:disable-next-line:max-line-length
+      description: 'Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person'
+    }
+  ];
 
 ```
 
 * add a new service named "promotion" to the services folder
 
-```
 
-```
 
 * update the promotion.service.ts
 
-```
+```ts
+. . .
+import { Promotion } from '../shared/promotion';
+import { PROMOTIONS } from '../shared/promotions';
 
+. . .
+
+  getPromotions(): Promotion[] {
+    return PROMOTIONS;
+  }
+
+  getPromotion(id: string): Promotion {
+    return PROMOTIONS.filter((promo) => (promo.id === id))[0];
+  }
+
+  getFeaturedPromotion(): Promotion {
+    return PROMOTIONS.filter((promotion) => promotion.featured)[0];
+  }
+  
+. . .
 ```
 
 * Import the promotion service into the AppModule and add the service to the providers.
 
 * Update the home.component.html
 
-```
+```html
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
 
+<mat-card *ngIf="dish" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{dish.name | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+  <mat-card-content>
+    <p>{{dish.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="promotion" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{promotion.name | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{promotion.image}} alt={{promotion.name}}>
+  <mat-card-content>
+    <p>{{promotion.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+</div>
 ```
 
 * update the home.component.ts file
 
-```
+```html
+. . .
 
+import { Dish } from '../shared/dish';
+import { DishService } from '../services/dish.service';
+import { Promotion } from '../shared/promotion';
+import { PromotionService } from '../services/promotion.service';
+
+. . .
+
+export class HomeComponent implements OnInit {
+
+  dish: Dish;
+  promotion: Promotion;
+
+  constructor(private dishservice: DishService,
+    private promotionservice: PromotionService) { }
+
+  ngOnInit() {
+    this.dish = this.dishservice.getFeaturedDish();
+    this.promotion = this.promotionservice.getFeaturedPromotion();
+  }
+
+}
 ```
 
 ### Highlighting the Current Component Link in the Toolbar
 
 * Update each of the links in the toolbar
 
-```
-
+```html
+  <a . . . routerLinkActive="active"><span . . . ></span> Home</a>
 ```
 
 * Add scss class to header.component.scss
 
-```
-
+```scss
+. . .
+$background-moredark: #4527A0;
+. . .
+.active {
+    background: $background-moredark;
+}
 ```
 
 Demo
