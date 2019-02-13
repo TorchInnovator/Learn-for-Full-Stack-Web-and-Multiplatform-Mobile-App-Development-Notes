@@ -97,10 +97,71 @@
     * Passing of a dependency to a dependent object so that it can use it. The client does not need to build the object
 
 * DI involves four roles:
+
   * The sevice
   * The client
   * The interfaces
   * The injector
+
+*  Angular and DI
+  * Separation of business logic and dependency construction
+  * The dependency is passed to the object consuming it where it is needed
+  * Angular injector subsystem is responsible for:
+    * creating components
+    * resolving their dependencies, and
+    * providing them to other components
+
+---
+
+## Angular Service Basics
+
+### Adding a Service
+
+* create a folder named services in the src/app folder
+
+* Add a service to your application using Angular CLI
+
+```
+ng generate service services/dishs 
+CREATE src/app/services/dish.service.spec.ts (323 bytes)
+CREATE src/app/services/dish.service.ts (133 bytes)
+```
+
+* update `dish.service.ts `file
+
+```ts
+. . .
+
+import { Dish } from '../shared/dish';
+import { DISHES } from '../shared/dishes';
+
+. . .
+
+  getDishes(): Dish[] {
+    return DISHES;
+  }
+. . .
+```
+
+* Add service to the `app.module.ts`
+
+```ts
+. . .
+
+import { DishService } from './services/dish.service';
+
+@NgModule({
+. . .
+
+  providers: [DishService],
+
+. . .
+
+```
+
+### Using the Service
+
+* 
 
 
 
