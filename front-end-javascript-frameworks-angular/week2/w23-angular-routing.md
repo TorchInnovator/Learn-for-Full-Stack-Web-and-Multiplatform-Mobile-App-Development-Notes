@@ -268,8 +268,25 @@ Angular Routing Basics
 
 ```
 ng generate component about
+CREATE src/app/about/about.component.html (24 bytes)
+CREATE src/app/about/about.component.spec.ts (621 bytes)
+CREATE src/app/about/about.component.ts (266 bytes)
+CREATE src/app/about/about.component.scss (0 bytes)
+UPDATE src/app/app.module.ts (1394 bytes)
+
 ng generate component home
+CREATE src/app/home/home.component.html (23 bytes)
+CREATE src/app/home/home.component.spec.ts (614 bytes)
+CREATE src/app/home/home.component.ts (262 bytes)
+CREATE src/app/home/home.component.scss (0 bytes)
+UPDATE src/app/app.module.ts (1468 bytes)
+
 ng generate component contact
+CREATE src/app/contact/contact.component.html (26 bytes)
+CREATE src/app/contact/contact.component.spec.ts (635 bytes)
+CREATE src/app/contact/contact.component.ts (274 bytes)
+CREATE src/app/contact/contact.component.scss (0 bytes)
+UPDATE src/app/app.module.ts (1554 bytes)
 ```
 
 ### Add a Router Module
@@ -280,7 +297,7 @@ ng generate component contact
 ng generate module app-routing
 ```
 
-* create a new file named _routes.ts _in the _app-routing _folder
+* create a new file named \_routes.ts \_in the \_app-routing \_folder
 
 ```ts
 import { Routes } from '@angular/router';
@@ -337,14 +354,14 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   . . .
-  
+
     imports: [
     . . .,
     AppRoutingModule
   ],
-  
+
   . . .
-  
+
 })
 
 . . .
