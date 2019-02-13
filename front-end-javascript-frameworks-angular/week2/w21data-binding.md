@@ -192,7 +192,7 @@ export const DISHES: Dish[] = [
 
 * Add `comment.ts`in folder and as follows
 
-```TypeScript
+```ts
 export class Comment {
     rating: number;
     comment: string;
