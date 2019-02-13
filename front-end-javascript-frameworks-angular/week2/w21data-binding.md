@@ -215,6 +215,43 @@ export class Dish {
 
 ### Updating the Menu Component
 
+* update` menu.component.ts` file , deleting the dishes constant and then make the following changes
+
+```ts
+import { Component, OnInit } from '@angular/core';
+import { Dish } from '../shared/dish';
+import { DISHES } from '../shared/dishes';
+
+. . .
+
+export class MenuComponent implements OnInit {
+
+  dishes: Dish[] = DISHES;
+
+  selectedDish: Dish;
+
+. . .
+
+  onSelect(dish: Dish) {
+    this.selectedDish = dish;
+  }
+
+}
+```
+
+* update the` menu.component.html` file
+
+```ts
+. . .
+
+      <mat-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)">
+        . . .
+        
+  <app-dishdetail [dish] = "selectedDish"></app-dishdetail>
+        
+. . .
+```
+
 ### Updating Dish Detail Component
 
 * 
