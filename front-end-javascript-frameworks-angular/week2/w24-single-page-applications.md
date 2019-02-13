@@ -275,12 +275,15 @@ $background-moredark: #4527A0;
 ```
 
 * Demo
+
   * Home
 
   ![](/assets/L2W2_4DemoHome.png)
+
   * Menu
 
   ![](/assets/L2W2DemoMenu.png)
+
   * Contact
 
   ![](/assets/L2W2_4DemoContact.png)
