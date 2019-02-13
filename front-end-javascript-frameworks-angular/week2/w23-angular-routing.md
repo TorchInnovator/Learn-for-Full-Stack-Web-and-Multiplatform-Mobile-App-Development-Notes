@@ -221,21 +221,40 @@ $divider-color:        #BDBDBD;
 
 ---
 
-##  Angular Routing
+## Angular Routing
 
-* Enables navigation among views 
+* Enables navigation among views
+
   * ses a browser URL as an instruction to navigate to a client-generated view
   * Can also pass along optional 
 
-*  HTML5 History API
+* HTML5 History API
 
-  *  Gives developers the ability to modify a website's URL without a full page refresh
+  * Gives developers the ability to modify a website's URL without a full page refresh
 
-    *  pushState\(\): Add history entry
+    * pushState\(\): Add history entry
 
-    *  replaceState\(\): Modify history entry
+    * replaceState\(\): Modify history entry
 
-    *  Configure
+    * Configure
+
+*  Angular Router
+
+  * Angular router leverages HTML5 history manipulation to modify the browser URL
+
+*  Some Angular Router Terms
+
+  *  Router Module
+
+    *  Routes :  {path: “/home”, component: HomeComponent}
+
+  *  routerOutlet
+
+    *  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+
+  *  routerLink
+
+    * &lt;a routerLink="/menu"&gt;Menu&lt;/a&gt;
 
 
 
