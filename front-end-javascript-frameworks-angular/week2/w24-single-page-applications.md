@@ -253,6 +253,10 @@ export class HomeComponent implements OnInit {
 }
 ```
 
+* Demo
+
+![](/assets/L2W2_4UTHCDemo.png)
+
 ### Highlighting the Current Component Link in the Toolbar
 
 * Update each of the links in the toolbar
