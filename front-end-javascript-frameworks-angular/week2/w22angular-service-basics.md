@@ -42,13 +42,13 @@
 
 * Model View View-Model \(MVVM\)
 
-  ![](blob:file:///bca90ba5-bd5a-465f-92ae-47dcab653a12)  
+  ![](blob:file:///bca90ba5-bd5a-465f-92ae-47dcab653a12)
 
 ---
 
-##  Angular Services
+## Angular Services
 
-*  Services
+* Services
 
   * Component classes should be kept lean:
 
@@ -59,6 +59,42 @@
   * Try to factor out application logic into services and let them do the heavy lifting
 
     * Dependency Injection
+
+*  Component – Service Interaction
+
+![](/assets/L2W2_2Service.png)
+
+---
+
+##  Dependency Injection
+
+*  What is Dependency Injection \(DI\)? 
+
+  * Define 
+
+    * Software design pattern that implements inversion of control for resolving dependencies 
+
+  * Dependency
+
+    * An object that can be used \(a service\)
+
+    *  Three ways for a component to get hold of its dependencies:
+
+      * Create dependency using new operator
+
+      *  Look up dependency using a global variable
+
+      * Have dependency passed to it where needed
+
+    * Third option is most flexible 
+
+    * – Hard coding of dependency avoided 
+
+    * – Testing becomes feasible
+
+  * Injection
+
+    * Passing of a dependency to a dependent object so that it can use it. The client does not need to build the object
 
 
 
