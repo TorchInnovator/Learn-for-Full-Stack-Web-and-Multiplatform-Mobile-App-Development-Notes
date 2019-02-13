@@ -288,5 +288,25 @@ $background-moredark: #4527A0;
 
   ![](/assets/L2W2_4DemoContact.png)
 
+---
+
+###  Angular Router: Parameters
+
+*  Angular Router
+
+  *  Paths specified as a URL
+
+  * Paths can also carry parameter values: 
+
+    * e.g., /dishdetail/42 where 42 is a route parameter
+
+  * Route parameters specified in the path definition as a token
+
+    * e.g., path: ‘dishdetail/:id’ where id is the token
+
+*  Route Parameters
+
+*  ActivatedRoute Service
+
 
 
