@@ -238,23 +238,131 @@ $divider-color:        #BDBDBD;
 
     * Configure
 
-*  Angular Router
+* Angular Router
 
   * Angular router leverages HTML5 history manipulation to modify the browser URL
 
-*  Some Angular Router Terms
+* Some Angular Router Terms
 
-  *  Router Module
+  * Router Module
 
-    *  Routes :  {path: “/home”, component: HomeComponent}
+    * Routes :  {path: “/home”, component: HomeComponent}
 
-  *  routerOutlet
+  * routerOutlet
 
-    *  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+    * &lt;router-outlet&gt;&lt;/router-outlet&gt;
 
-  *  routerLink
+  * routerLink
 
     * &lt;a routerLink="/menu"&gt;Menu&lt;/a&gt;
+
+---
+
+```
+Angular Routing Basics
+```
+
+### Adding Components
+
+* Add three new components to your Angular app
+
+```
+ng generate component about
+ng generate component home
+ng generate component contact
+```
+
+### Add a Router Module
+
+* Add a new module named app-routing
+
+```
+ng generate module app-routing
+```
+
+* create a new file named _routes.ts _in the _app-routing _folder
+
+```ts
+import { Routes } from '@angular/router';
+
+import { MenuComponent } from '../menu/menu.component';
+import { DishdetailComponent } from '../dishdetail/dishdetail.component';
+import { HomeComponent } from '../home/home.component';
+import { AboutComponent } from '../about/about.component';
+import { ContactComponent } from '../contact/contact.component';
+
+export const routes: Routes = [
+  { path: 'home',  component: HomeComponent },
+  { path: 'menu',     component: MenuComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
+```
+
+* Update the `app-routing.module.ts`
+
+```ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { routes } from './routes';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [ RouterModule ],
+  declarations: []
+})
+export class AppRoutingModule { }
+```
+
+### Using the Routing Module
+
+* update the `app.component.html`
+
+```html
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+```
+
+* update the `app.module.ts file`
+
+```ts
+. . .
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+@NgModule({
+  . . .
+  
+    imports: [
+    . . .,
+    AppRoutingModule
+  ],
+  
+  . . .
+  
+})
+
+. . .
+```
+
+* update the toolbar in the `header.component.html`
+
+```html
+<mat-toolbar color="primary">
+  <span><img src="/assets/images/logo.png" height=30 width=41></span>
+  <a mat-button routerLink="/home"><span class="fa fa-home fa-lg"></span> Home</a>
+  <a mat-button><span class="fa fa-info fa-lg"></span> About</a>
+  <a mat-button routerLink="/menu"><span class="fa fa-list fa-lg"></span> Menu</a>
+  <a mat-button><span class="fa fa-address-card fa-lg"></span> Contact</a>
+</mat-toolbar>
+
+. . .
+```
 
 
 
