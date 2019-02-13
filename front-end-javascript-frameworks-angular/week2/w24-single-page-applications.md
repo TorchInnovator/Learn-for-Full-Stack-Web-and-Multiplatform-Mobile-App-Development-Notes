@@ -111,7 +111,7 @@
   getFeaturedDish(): Dish {
     return DISHES.filter((dish) => dish.featured)[0];
   }
-  
+
 . . .
 ```
 
@@ -146,12 +146,9 @@ export const PROMOTIONS: Promotion[] = [
       description: 'Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person'
     }
   ];
-
 ```
 
 * add a new service named "promotion" to the services folder
-
-
 
 * update the promotion.service.ts
 
@@ -173,7 +170,7 @@ import { PROMOTIONS } from '../shared/promotions';
   getFeaturedPromotion(): Promotion {
     return PROMOTIONS.filter((promotion) => promotion.featured)[0];
   }
-  
+
 . . .
 ```
 
@@ -222,7 +219,7 @@ import { PROMOTIONS } from '../shared/promotions';
 
 * update the home.component.ts file
 
-```html
+```ts
 . . .
 
 import { Dish } from '../shared/dish';
