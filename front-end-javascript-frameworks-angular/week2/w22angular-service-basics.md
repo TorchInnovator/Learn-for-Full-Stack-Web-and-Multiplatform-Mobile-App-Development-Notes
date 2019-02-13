@@ -78,16 +78,6 @@
 
     * An object that can be used \(a service\)
 
-    * Four roles:
-
-      * The service
-
-      * The client
-
-      * The interfaces
-
-      * The injector
-
     * Three ways for a component to get hold of its dependencies:
 
       * Create dependency using new operator
@@ -105,6 +95,12 @@
   * Injection
 
     * Passing of a dependency to a dependent object so that it can use it. The client does not need to build the object
+
+* DI involves four roles:
+  * The sevice
+  * The client
+  * The interfaces
+  * The injector
 
 
 
