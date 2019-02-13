@@ -29,4 +29,5 @@
     * [W1Assignment1](front-end-javascript-frameworks-angular/week1/w1assignment1.md)
   * [Week2](front-end-javascript-frameworks-angular/week2.md)
     * [W2\_1Data Binding](front-end-javascript-frameworks-angular/week2/w21data-binding.md)
+    * W2\_2Angular Service Basics
 
