@@ -115,6 +115,8 @@
 . . .
 ```
 
+Note : arrow function!!
+
 * add `promotion.ts` file
 
 ```ts
