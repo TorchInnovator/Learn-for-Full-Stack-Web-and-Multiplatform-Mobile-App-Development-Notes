@@ -14,7 +14,7 @@
 
 * create `dishes.ts` in share folder and add following code:
 
-```TypeScript
+```ts
 import { Dish } from './dish';
 
 export const DISHES: Dish[] = [
@@ -203,7 +203,7 @@ export class Comment {
 
 * update dish class to allow a dish to have an array of comments
 
-```
+```ts
 import { Comment } from './comment';
 
 export class Dish {
