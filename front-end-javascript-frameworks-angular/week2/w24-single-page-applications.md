@@ -34,6 +34,44 @@
 
 ---
 
+### Angular Router: Parameters
+
+* Angular Router
+
+  * Paths specified as a URL
+
+  * Paths can also carry parameter values:
+
+    * e.g., /dishdetail/42 where 42 is a route parameter
+
+  * Route parameters specified in the path definition as a token
+
+    * e.g., path: ‘dishdetail/:id’ where id is the token
+
+* Route Parameters
+
+  * Route parameters can be specified using a link parameter array while specifiyng the link
+
+    * e.g., &lt;\*ngFor="let dish of dishes"\[routerLink\]="\[/dishdetail",dish.id\]"&gt;
+
+  * Can also be used within a method
+
+    * e.g., this.router.navigate\(\['/dishdetail', dish.id\]\);
+
+* ActivatedRoute Service
+
+  * Router service that provides useful information about the routes, including:
+
+    * **url**: An Observable of the route path\(s\), represented as an array of strings for each part of the route path.
+
+    * **params**: An Observable that contains the required and optional parameters specific to the route
+
+    * **queryParams**: An Observable that contains the query parameters available to all routes.
+
+ 
+
+---
+
 # Single Page Applications Part 1
 
 ### Integrating the Contact Component
@@ -290,39 +328,7 @@ $background-moredark: #4527A0;
 
 ---
 
-### Angular Router: Parameters
-
-* Angular Router
-
-  * Paths specified as a URL
-
-  * Paths can also carry parameter values:
-
-    * e.g., /dishdetail/42 where 42 is a route parameter
-
-  * Route parameters specified in the path definition as a token
-
-    * e.g., path: ‘dishdetail/:id’ where id is the token
-
-* Route Parameters
-
-  *  Route parameters can be specified using a link parameter array while specifiyng the link
-
-    *  e.g., &lt;\*ngFor="let dish of dishes"\[routerLink\]="\[/dishdetail",dish.id\]"&gt;
-
-  *  Can also be used within a method
-
-    *  e.g., this.router.navigate\(\['/dishdetail', dish.id\]\);
-
-* ActivatedRoute Service
-
-  *  Router service that provides useful information about the routes, including:
-
-    *  **url**: An Observable of the route path\(s\), represented as an array of strings for each part of the route path.
-
-    * **params**: An Observable that contains the required and optional parameters specific to the route
-
-    * **queryParams**: An Observable that contains the query parameters available to all routes.
+# Single Page Applications Part 2
 
 
 
