@@ -262,10 +262,8 @@ export class HomeComponent implements OnInit {
 * Update each of the links in the toolbar
 
 ```html
-  <a . . . routerLinkActive="active"><span . . . ></span> Home</a>
+  <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
 ```
-
-* Add scss class to header.component.scss
 
 ```scss
 . . .
