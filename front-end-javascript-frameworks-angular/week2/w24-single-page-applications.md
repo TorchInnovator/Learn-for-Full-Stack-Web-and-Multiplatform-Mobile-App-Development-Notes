@@ -152,6 +152,12 @@ export const PROMOTIONS: Promotion[] = [
 
 * add a new service named "promotion" to the services folder
 
+```
+ng generate service services/promotion
+CREATE src/app/services/promotion.service.spec.ts (348 bytes)
+CREATE src/app/services/promotion.service.ts (138 bytes)
+```
+
 * update the promotion.service.ts
 
 ```ts
