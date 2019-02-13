@@ -60,17 +60,17 @@
 
     * Dependency Injection
 
-*  Component – Service Interaction
+* Component – Service Interaction
 
 ![](/assets/L2W2_2Service.png)
 
 ---
 
-##  Dependency Injection
+## Dependency Injection
 
-*  What is Dependency Injection \(DI\)? 
+* What is Dependency Injection \(DI\)?
 
-  * Define 
+  * Define
 
     * Software design pattern that implements inversion of control for resolving dependencies 
 
@@ -78,19 +78,29 @@
 
     * An object that can be used \(a service\)
 
-    *  Three ways for a component to get hold of its dependencies:
+    * Four roles:
+
+      * The service
+
+      * The client
+
+      * The interfaces
+
+      * The injector
+
+    * Three ways for a component to get hold of its dependencies:
 
       * Create dependency using new operator
 
-      *  Look up dependency using a global variable
+      * Look up dependency using a global variable
 
       * Have dependency passed to it where needed
 
-    * Third option is most flexible 
+    * Third option is most flexible
 
-    * – Hard coding of dependency avoided 
+      * Hard coding of dependency avoided
 
-    * – Testing becomes feasible
+      * Testing becomes feasible
 
   * Injection
 
