@@ -101,7 +101,7 @@
 
 * update the dish service to return a specific dish
 
-```
+```ts
 . . .
 
   getDish(id: string): Dish {
