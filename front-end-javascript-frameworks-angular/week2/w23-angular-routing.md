@@ -221,5 +221,21 @@ $divider-color:        #BDBDBD;
 
 ---
 
+##  Angular Routing
+
+* Enables navigation among views 
+  * ses a browser URL as an instruction to navigate to a client-generated view
+  * Can also pass along optional 
+
+*  HTML5 History API
+
+  *  Gives developers the ability to modify a website's URL without a full page refresh
+
+    *  pushState\(\): Add history entry
+
+    *  replaceState\(\): Modify history entry
+
+    *  Configure
+
 
 
