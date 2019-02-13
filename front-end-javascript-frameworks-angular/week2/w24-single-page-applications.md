@@ -83,14 +83,14 @@
 
 * Update the `routes.ts`file to add in the configuration for the contact component
 
-```
-
+```ts
+  { path: 'contactus',     component: ContactComponent },
 ```
 
 * Update the`header.component.html`
 
-```
-
+```html
+  <a mat-button routerLink="/contactus"><span class="fa fa-address-card fa-lg"></span> Contact</a>
 ```
 
 ### Updating the Home Component
