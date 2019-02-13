@@ -93,6 +93,10 @@
   <a mat-button routerLink="/contactus"><span class="fa fa-address-card fa-lg"></span> Contact</a>
 ```
 
+* Demo
+
+![](/assets/L2W2_4ICCDemo.png)
+
 ### Updating the Home Component
 
 * update the dish service to return a specific dish
