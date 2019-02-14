@@ -158,10 +158,10 @@ import { switchMap } from 'rxjs/operators';
   dishIds: string[];
   prev: string;
   next: string;
-  
+
   . . .
-  
-  
+
+
   ngOnInit() {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
@@ -173,7 +173,7 @@ import { switchMap } from 'rxjs/operators';
     this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
     this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
   }
-  
+
   . . .
 ```
 
@@ -182,20 +182,145 @@ import { switchMap } from 'rxjs/operators';
 * Update dishdetail.component.html
 
 ```html
-
 . . .
 
       <mat-card-actions>
         <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
         . . .
-        
+
         <span class="flex-spacer"></span>
         <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
       </mat-card-actions>
 
       . . .
-      
-      
+```
+
+### Demo
+
+
+
+
+
+---
+
+## Angular Reactive Forms Part 3
+
+### Add Form Validation
+
+* update contact.component.ts
+
+```ts
+. . .
+
+    this.feedbackForm = this.fb.group({
+      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
+      lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
+      telnum: ['', [Validators.required, Validators.pattern] ],
+      email: ['', [Validators.required, Validators.email] ],
+      agree: false,
+      contacttype: 'None',
+      message: ''
+    });
+    
+. . .
+```
+
+* In contact.component.ts subscribe to Angular Form observable named valueChanges and initiate form validation
+
+```ts
+. . .
+
+  formErrors = {
+    'firstname': '',
+    'lastname': '',
+    'telnum': '',
+    'email': ''
+  };
+
+  validationMessages = {
+    'firstname': {
+      'required':      'First Name is required.',
+      'minlength':     'First Name must be at least 2 characters long.',
+      'maxlength':     'FirstName cannot be more than 25 characters long.'
+    },
+    'lastname': {
+      'required':      'Last Name is required.',
+      'minlength':     'Last Name must be at least 2 characters long.',
+      'maxlength':     'Last Name cannot be more than 25 characters long.'
+    },
+    'telnum': {
+      'required':      'Tel. number is required.',
+      'pattern':       'Tel. number must contain only numbers.'
+    },
+    'email': {
+      'required':      'Email is required.',
+      'email':         'Email not in valid format.'
+    },
+  };
+
+. . .
+
+  createForm(): void {
+
+  . . .
+
+    this.feedbackForm.valueChanges
+      .subscribe(data => this.onValueChanged(data));
+
+    this.onValueChanged(); // (re)set validation messages now
+
+  }
+  
+  . . .
+  
+  
+  onValueChanged(data?: any) {
+    if (!this.feedbackForm) { return; }
+    const form = this.feedbackForm;
+    for (const field in this.formErrors) {
+      if (this.formErrors.hasOwnProperty(field)) {
+        // clear previous error message (if any)
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.validationMessages[field];
+          for (const key in control.errors) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.formErrors[field] += messages[key] + ' ';
+            }
+          }
+        }
+      }
+    }
+  }
+
+```
+
+* update the form in contact.component.html
+
+```html
+. . .
+
+        <mat-form-field class="half-width">
+          <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+          <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
+          <mat-error *ngIf="formErrors.lastname">{{formErrors.lastname}}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel" pattern="[0-9]*" required>
+          <mat-error *ngIf="formErrors.telnum">{{formErrors.telnum}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="email" placeholder="Email" type="email" email required>
+          <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+        </mat-form-field>
+        
+. . .
 ```
 
 
