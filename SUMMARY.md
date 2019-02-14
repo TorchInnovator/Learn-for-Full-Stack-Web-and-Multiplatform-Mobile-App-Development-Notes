@@ -33,4 +33,6 @@
     * [W2\_3-Angular Routing](front-end-javascript-frameworks-angular/week2/w23-angular-routing.md)
     * [W2\_4-Single Page Applications](front-end-javascript-frameworks-angular/week2/w24-single-page-applications.md)
     * [W2-Assignment](front-end-javascript-frameworks-angular/week2/w2-assignment.md)
+  * [Week3](front-end-javascript-frameworks-angular/week3.md)
+    * [W3\_1-Environment Setup Instructions](front-end-javascript-frameworks-angular/week3/environment-setup-instructions.md)
 
