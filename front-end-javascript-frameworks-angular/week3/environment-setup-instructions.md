@@ -87,9 +87,12 @@ export class HeaderComponent implements OnInit {
 }
 ```
 
-##  Angular Template-driven Forms
+---
+
+## Angular Template-driven Forms
 
 * Forms
+
   * Cohesive, effective and compelling data entry experience 
   * Extensively used in websites and web applications for
 
@@ -97,27 +100,29 @@ export class HeaderComponent implements OnInit {
 
     * submit information \(placing orders, booking a ticket etc.\)
 
-*  Angular Forms
+* Angular Forms
 
-  *  Two-way data binding
+  * Two-way data binding
 
-  *  Change tracking
+  * Change tracking
 
-  *  Form validation and error handling
+  * Form validation and error handling
 
-*  Angular Template-driven Forms
+* Angular Template-driven Forms
 
-  *  Use Angular template syntax to construct a form using the form elements
+  * Use Angular template syntax to construct a form using the form elements
 
-  *  Bind Angular form-specific directives with form elements
+  * Bind Angular form-specific directives with form elements
 
-*  Forms and Two-way Data Binding
+* Forms and Two-way Data Binding
 
   * Define a JavaScript object in your class
 
-  *  Use ngModel directive on form fields
+  * Use ngModel directive on form fields
 
-    *  Banana in a box \[\(\)\]
+    * Banana in a box \[\(\)\]
+
+---
 
 ## Angular Template-driven Forms Part 1
 
