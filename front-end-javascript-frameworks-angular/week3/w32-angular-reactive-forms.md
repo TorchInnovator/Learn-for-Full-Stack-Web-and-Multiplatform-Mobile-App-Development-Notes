@@ -42,6 +42,32 @@
 
   * patchValue\(\): update specific form control value
 
+###  Angular Reactive Form Validation
+
+*  Validators should be imported from @angular/forms
+
+  ```
+  – reduce repetition and clutter
+    this.feedbackForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      telnum: ['', Validators.required],
+      email: ['', Validators.required],
+      agree: [false, Validators.required],
+      contacttype: ['None', Validators.required],
+      message: ['', Validators.required]
+  ```
+
+*  Inspecting Form Control Properties
+
+  * .value : value of the form control .
+
+  * status :  validity: VALID, INVALID, PENDING, DISABLED 
+
+  * .pristine/.dirty :  true if user has not changed/changed value in UI 
+
+  * .untouched/ .touched :  true if the user has not yet entered the HTML control and triggered its blur event
+
 ---
 
 ## Angular Reactive Forms Part 1
@@ -63,15 +89,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
   imports: [
     . . .
-    
+
     MatSelectModule,
     MatSlideToggleModule,
-    
+
     . . .,
-    
+
     ReactiveFormsModule
   ],
-  
+
   . . .
 ```
 
@@ -199,7 +225,7 @@ export class ContactComponent implements OnInit {
 }
 ```
 
-### Demo 
+### Demo
 
 * Contact UI
 
