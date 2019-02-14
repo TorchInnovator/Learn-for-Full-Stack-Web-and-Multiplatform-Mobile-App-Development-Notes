@@ -211,3 +211,59 @@ export class LoginComponent implements OnInit {
 
 
 
+---
+
+# Angular Template-driven Forms Part 2
+
+### Adding Template Reference Variables
+
+* add in the template reference variables to the two &lt;input&gt; elements and the &lt;form&gt; element in login.component.html file
+
+```html
+. . .
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+. . .
+
+        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
+        
+. . .
+
+        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+        
+. . .
+```
+
+### Doing Form Validation
+
+* disable the submit button if the form is invalid
+
+```html
+. . .
+    <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid" >Login</button>
+. . .
+```
+
+* add error messages below the input elements
+
+```
+      . . .
+      
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username"  #username="ngModel" required>
+        <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+        <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+      </mat-form-field>
+      
+      . . .
+      
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid">Login</button>
+      
+      . . .
+```
+
+
+
