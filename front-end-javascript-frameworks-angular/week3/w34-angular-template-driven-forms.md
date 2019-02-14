@@ -318,5 +318,7 @@ import { switchMap } from 'rxjs/operators';
 . . .
 ```
 
+### DEMO![](/assets/L2W3_ARFPart3Demo.png)
+
 
 
