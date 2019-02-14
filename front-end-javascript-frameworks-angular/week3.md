@@ -4,7 +4,7 @@
 
 ## Angular and RxJS
 
-###  The Observer Pattern
+### The Observer Pattern
 
 * Software-engineering pattern
 
@@ -14,7 +14,7 @@
 
 * Observable notifies observers of state changes
 
-###  Observables
+### Observables
 
 * Streams
 
@@ -24,9 +24,9 @@
 
 * Canceling and retrial straightforward
 
- Reactive Programming
+  Reactive Programming
 
-*  Data flows: how does data flow through your application?
+* Data flows: how does data flow through your application?
 
 * Propagation of change through your application
 
@@ -36,9 +36,9 @@
 
   * Functional + Reactive
 
-###  RxJS
+### RxJS
 
-*  Library for composing asynchronous and event-based programs by using observable sequences.
+* Library for composing asynchronous and event-based programs by using observable sequences.
 * Provides:
   * one core type, the Observable,
   * satellite types \(Observer, Schedulers, Subjects\), and
@@ -46,23 +46,23 @@
   * to allow handling asynchronous events as collections.
 * Used for observables support in Angular
 
-###  Observables, Operators and Marble Diagrams![](/assets/L2W3_4OOMD.png)
+### Observables, Operators and Marble Diagrams![](/assets/L2W3_4OOMD.png)
 
-###  Angular and RxJS
+### Angular and RxJS
 
-*  Observables all over Angular
+* Observables all over Angular
 
-  * Forms 
+  * Forms
 
-  * HTTP  
+  * HTTP
 
-  * AsyncPipe 
+  * AsyncPipe
 
   * Change detection
 
   ![](/assets/L2W3_4AngularRxJs.png)
 
-
+---
 
 ## Angular and RxJS Part 1[ ](https://www.coursera.org/learn/angular/supplement/VsHr0/angular-template-driven-forms-objectives-and-outcomes)
 
