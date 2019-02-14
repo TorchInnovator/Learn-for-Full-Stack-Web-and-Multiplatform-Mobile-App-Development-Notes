@@ -122,6 +122,30 @@ export class HeaderComponent implements OnInit {
 
     * Banana in a box \[\(\)\]
 
+
+
+###  Angular Template-driven Form Validation
+
+*  Angular Form Validation
+  *  Turn off HTML5 form validation:
+
+    * &lt;form novalidate&gt;
+*  Angular Template Reference Variables
+
+  *  set to ngForm and ngModel gives reference to the Angular directive
+
+    * check for control states
+
+  * Control states
+
+    *  pristine : true if field/form has not been changed
+
+    *  .dirty :  reverse of .pristine
+
+    *  valid :  true if form field/whole form is valid
+
+    *  .invalid :  reverse of .valid
+
 ---
 
 ## Angular Template-driven Forms Part 1
@@ -207,12 +231,7 @@ export class LoginComponent implements OnInit {
   }
 
 }
-
 ```
-
- 
-
- 
 
 ### Demo
 
