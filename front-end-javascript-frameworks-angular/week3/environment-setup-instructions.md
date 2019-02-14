@@ -122,29 +122,29 @@ export class HeaderComponent implements OnInit {
 
     * Banana in a box \[\(\)\]
 
+### Angular Template-driven Form Validation
 
+* Angular Form Validation
 
-###  Angular Template-driven Form Validation
-
-*  Angular Form Validation
-  *  Turn off HTML5 form validation:
+  * Turn off HTML5 form validation:
 
     * &lt;form novalidate&gt;
-*  Angular Template Reference Variables
 
-  *  set to ngForm and ngModel gives reference to the Angular directive
+* Angular Template Reference Variables
+
+  * set to ngForm and ngModel gives reference to the Angular directive
 
     * check for control states
 
   * Control states
 
-    *  pristine : true if field/form has not been changed
+    * pristine : true if field/form has not been changed
 
-    *  .dirty :  reverse of .pristine
+    * .dirty :  reverse of .pristine
 
-    *  valid :  true if form field/whole form is valid
+    * valid :  true if form field/whole form is valid
 
-    *  .invalid :  reverse of .valid
+    * .invalid :  reverse of .valid
 
 ---
 
@@ -294,6 +294,10 @@ export class LoginComponent implements OnInit {
 
       . . .
 ```
+
+### Demo
+
+![](/assets/L2W3_1Part2Demo.png)
 
 
 

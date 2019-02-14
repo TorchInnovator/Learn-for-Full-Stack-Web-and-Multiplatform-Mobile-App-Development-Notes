@@ -35,4 +35,5 @@
     * [W2-Assignment](front-end-javascript-frameworks-angular/week2/w2-assignment.md)
   * [Week3](front-end-javascript-frameworks-angular/week3.md)
     * [W3\_1-Environment Setup Instructions](front-end-javascript-frameworks-angular/week3/environment-setup-instructions.md)
+    * [W3\_2-Angular Reactive Forms](front-end-javascript-frameworks-angular/week3/w32-angular-reactive-forms.md)
 
