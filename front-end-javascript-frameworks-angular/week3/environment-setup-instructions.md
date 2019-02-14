@@ -207,9 +207,20 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
 ```
 
+ 
 
+ 
+
+### Demo
+
+* UI
+
+![](/assets/L2W3_1Demo1.png)
+
+* save Information![](/assets/L2W3_1Demo2.png)
 
 ---
 
@@ -226,11 +237,11 @@ export class LoginComponent implements OnInit {
 . . .
 
         <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
-        
+
 . . .
 
         <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
-        
+
 . . .
 ```
 
@@ -248,7 +259,7 @@ export class LoginComponent implements OnInit {
 
 ```
       . . .
-      
+
       <mat-form-field>
         <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username"  #username="ngModel" required>
         <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
@@ -257,11 +268,11 @@ export class LoginComponent implements OnInit {
         <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
         <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
       </mat-form-field>
-      
+
       . . .
-      
+
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid">Login</button>
-      
+
       . . .
 ```
 
