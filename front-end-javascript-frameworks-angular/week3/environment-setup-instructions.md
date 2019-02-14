@@ -52,14 +52,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     . . .
   ],
-  
+
   . . .
-  
+
   entryComponents: [
         LoginComponent
   ],
 . . .
-  
+
 })
 ```
 
@@ -87,6 +87,92 @@ export class HeaderComponent implements OnInit {
 }
 ```
 
-* 
+## Angular Template-driven Forms Part 1
+
+### Add in the Login Template-driven Form
+
+* import the Angular Forms module\(Template-driven forms\) into app.module.ts
+
+```ts
+. . .
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
+
+. . . 
+
+@NgModule({ 
+  
+. . . 
+
+  imports: [ 
+    . . .
+   
+    MatFormFieldModule, 
+    MatInputModule,
+    MatCheckboxModule,
+    
+    . . .
+    
+    FormsModule 
+  ],
+  
+. . .
+```
+
+* Add form in login.component.html file
+
+```html
+<p>{{ user | json }}</p>
+
+<form novalidate (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <p>
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button class="background-primary text-floral-white" >Login</button>
+  </mat-dialog-actions>
+</form>
+```
+
+* use the Angular Material support for styling the form elements using the Form element components
+
+
+
+* update login.component.ts file
+
+```ts
+. . .
+
+export class LoginComponent implements OnInit {
+
+  user = {username: '', password: '', remember: false};
+
+  constructor(public dialogRef: MatDialogRef<LoginComponent>) { }
+
+  ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('User: ', this.user);
+    this.dialogRef.close();
+  }
+
+}
+```
+
 
 
