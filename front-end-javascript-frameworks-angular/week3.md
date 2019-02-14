@@ -24,7 +24,7 @@
 
 * Canceling and retrial straightforward
 
-  Reactive Programming
+### Reactive Programming
 
 * Data flows: how does data flow through your application?
 
@@ -129,6 +129,74 @@ import { Observable, of } from 'rxjs';
 ```
 
 * Similarly update about.component.ts, dishdetail.component.ts and home.component.ts to subscribe to the observables from the services.
+
+---
+
+# Angular and RxJS Part 2
+
+### Updating the Dish Service
+
+* Update dish.service.ts
+
+```ts
+  getDishIds(): Observable<string[] | any> {
+    return of(DISHES.map(dish => dish.id ));
+  }
+```
+
+### Update the Dish Detail Component
+
+* Update the dishdetail.component.ts
+
+```ts
+. . .
+
+import { switchMap } from 'rxjs/operators';
+
+. . .
+
+  dishIds: string[];
+  prev: string;
+  next: string;
+  
+  . . .
+  
+  
+  ngOnInit() {
+    this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
+    this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
+    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+  }
+
+  setPrevNext(dishId: string) {
+    const index = this.dishIds.indexOf(dishId);
+    this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
+    this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
+  }
+  
+  . . .
+```
+
+### Updating the Dish Detail Template
+
+* Update dishdetail.component.html
+
+```html
+
+. . .
+
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
+        . . .
+        
+        <span class="flex-spacer"></span>
+        <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
+      </mat-card-actions>
+
+      . . .
+      
+      
+```
 
 
 
