@@ -197,9 +197,7 @@ import { switchMap } from 'rxjs/operators';
 
 ### Demo
 
-
-
-
+![](/assets/L2W3_4ARFpart3Demo.png)
 
 ---
 
@@ -221,7 +219,7 @@ import { switchMap } from 'rxjs/operators';
       contacttype: 'None',
       message: ''
     });
-    
+
 . . .
 ```
 
@@ -270,10 +268,10 @@ import { switchMap } from 'rxjs/operators';
     this.onValueChanged(); // (re)set validation messages now
 
   }
-  
+
   . . .
-  
-  
+
+
   onValueChanged(data?: any) {
     if (!this.feedbackForm) { return; }
     const form = this.feedbackForm;
@@ -293,7 +291,6 @@ import { switchMap } from 'rxjs/operators';
       }
     }
   }
-
 ```
 
 * update the form in contact.component.html
@@ -319,7 +316,7 @@ import { switchMap } from 'rxjs/operators';
           <input matInput formControlName="email" placeholder="Email" type="email" email required>
           <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
         </mat-form-field>
-        
+
 . . .
 ```
 
