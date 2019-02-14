@@ -14,7 +14,7 @@
 
 ![](/assets/L2W3_3PromiseEx.png)
 
-###  Why Promises
+### Why Promises
 
 * Solves the callback hell \(heavily nested callback code\) problem
 
@@ -50,9 +50,6 @@
 
 * Similarly update leader.service.ts and promotion.service.ts to return promises.
 
-  
-
-
 ### Handling Promises
 
 * update its handling of the call to getDishes\(\) method in menu.component.ts
@@ -64,8 +61,6 @@
 
 * update about.component.ts, dishdetail.component.ts and home.component.ts where the services are invoked to fetch the data
 
-
-
 * Update dishdetail.component.html
 
 ```html
@@ -74,6 +69,71 @@
       <h3 *ngIf="dish">{{dish.name | uppercase}}</h3>
 
 . . .
+```
+
+---
+
+# Angular and Promise Part 2
+
+### Simulating Time Delay within the Service
+
+* update dish.service.ts
+
+```ts
+  getDishes(): Promise<Dish[]> {
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES), 2000);
+    });
+  }
+
+  getDish(id: string): Promise<Dish> {
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES.filter((dish) => (dish.id === id))[0]), 2000);
+    });
+  }
+
+  getFeaturedDish(): Promise<Dish> {
+    return  new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES.filter((dish) => dish.featured)[0]), 2000);
+    });
+  }
+```
+
+* Update the promotion.service.ts and leader.service.ts files in the same manner  
+
+### Using Angular Material Progress Spinner
+
+* update app.module.ts
+
+```ts
+. . .
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+. . .
+
+  imports: [
+    . . .,
+    MatProgressSpinnerModule,
+    . . .
+  ]
+  
+  . . .
+```
+
+* update menu.component.html file ,about.component.html, home.component.html and dishdetail.component.html similarly
+
+```ts
+  <div fxFlex *ngIf="dishes">
+  . . .
+  </div>
+  <div [hidden]="dishes">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+
 ```
 
 
