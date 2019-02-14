@@ -87,6 +87,38 @@ export class HeaderComponent implements OnInit {
 }
 ```
 
+##  Angular Template-driven Forms
+
+* Forms
+  * Cohesive, effective and compelling data entry experience 
+  * Extensively used in websites and web applications for
+
+    * log in
+
+    * submit information \(placing orders, booking a ticket etc.\)
+
+*  Angular Forms
+
+  *  Two-way data binding
+
+  *  Change tracking
+
+  *  Form validation and error handling
+
+*  Angular Template-driven Forms
+
+  *  Use Angular template syntax to construct a form using the form elements
+
+  *  Bind Angular form-specific directives with form elements
+
+*  Forms and Two-way Data Binding
+
+  * Define a JavaScript object in your class
+
+  *  Use ngModel directive on form fields
+
+    *  Banana in a box \[\(\)\]
+
 ## Angular Template-driven Forms Part 1
 
 ### Add in the Login Template-driven Form
@@ -104,21 +136,21 @@ import { FormsModule } from '@angular/forms';
 . . . 
 
 @NgModule({ 
-  
+
 . . . 
 
   imports: [ 
     . . .
-   
+
     MatFormFieldModule, 
     MatInputModule,
     MatCheckboxModule,
-    
+
     . . .
-    
+
     FormsModule 
   ],
-  
+
 . . .
 ```
 
@@ -149,8 +181,6 @@ import { FormsModule } from '@angular/forms';
 ```
 
 * use the Angular Material support for styling the form elements using the Form element components
-
-
 
 * update login.component.ts file
 
