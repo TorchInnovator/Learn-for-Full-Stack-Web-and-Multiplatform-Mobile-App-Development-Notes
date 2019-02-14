@@ -48,7 +48,168 @@
 
 ### Importing the Reactive Forms Module
 
-* ### Creating the Reactive Form
-* 
+* mporting the ReactiveFormsModule from @angular/forms into AppModule
+
+```ts
+. . .
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
+
+. . .
+
+@NgModule({
+. . .
+
+  imports: [
+    . . .
+    
+    MatSelectModule,
+    MatSlideToggleModule,
+    
+    . . .,
+    
+    ReactiveFormsModule
+  ],
+  
+  . . .
+```
+
+* create a new file named feedback.ts
+
+```ts
+export class Feedback {
+    firstname: string;
+    lastname: string;
+    telnum: number;
+    email: string;
+    agree: boolean;
+    contacttype: string;
+    message: string;
+};
+
+export const ContactType = ['None', 'Tel', 'Email'];
+```
+
+### Creating the Reactive Form
+
+* update contact.component.ts
+
+```ts
+. . .
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Feedback, ContactType } from '../shared/feedback';
+
+. . .
+
+export class ContactComponent implements OnInit {
+
+  feedbackForm: FormGroup;
+  feedback: Feedback;
+  contactType = ContactType;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  ngOnInit() {
+  }
+
+  createForm() {
+    this.feedbackForm = this.fb.group({
+      firstname: '',
+      lastname: '',
+      telnum: 0,
+      email: '',
+      agree: false,
+      contacttype: 'None',
+      message: ''
+    });
+  }
+
+  onSubmit() {
+    this.feedback = this.feedbackForm.value;
+    console.log(this.feedback);
+    this.feedbackForm.reset();
+  }
+
+}
+```
+
+* add the reactive form to contact.component.html
+
+```html
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>Send us your Feedback</h3>
+    <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
+
+    <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="firstname" placeholder="First Name" type="text">
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="lastname" placeholder="Last Name" type="text">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel">
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="email" placeholder="Email" type="email">
+        </mat-form-field>
+      </p>
+      <table class="form-size">
+        <td>
+          <mat-slide-toggle formControlName="agree">May we contact you?</mat-slide-toggle>
+        </td>
+        <td>
+          <mat-select placeholder="How?" formControlName="contacttype">
+            <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+              {{ ctype }}
+            </mat-option>
+          </mat-select>
+        </td>
+        </table>
+      <p>
+        <mat-form-field class="full-width">
+          <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
+        </mat-form-field>
+      </p>
+      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+    </form>
+  </div>
+```
+
+* Add CSS classes to contact.component.scss
+
+```scss
+.full-width {
+    width: 95%
+}
+
+.half-width {
+    width: 45%
+}
+
+.form-size {
+    width: 75%
+}
+```
+
+### Demo 
+
+* Contact UI
+
+![](/assets/W3_2ARFPart1Demo.png)
+
+* Data
+
+![](/assets/L2W3ARFPart1Demo2.png)
+
+---
+
 
 
