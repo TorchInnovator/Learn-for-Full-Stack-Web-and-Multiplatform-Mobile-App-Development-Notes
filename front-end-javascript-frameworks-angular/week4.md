@@ -88,7 +88,6 @@ import { Directive, ElementRef, Renderer2, HostListener  } from '@angular/core';
 
 ```
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 ```
 
 * dishdetail.component.ts and add the following to it to include various Animation classes
@@ -118,7 +117,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         transition('* => *', animate('0.5s ease-in-out'))
     ])
   ]
-  
+
   . . .
 })
 . . .
@@ -201,8 +200,46 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 ### Adding Animation Support for Route Changes
 
-* 
-  
+* add a new factory in app.animation.ts
+
+```ts
+export function flyInOut() {
+    return trigger('flyInOut', [
+        state('*', style({ opacity: 1, transform: 'translateX(0)'})),
+        transition(':enter', [
+            style({ transform: 'translateX(-100%)', opacity: 0 }),
+            animate('500ms ease-in')
+        ]),
+        transition(':leave', [
+            animate('500ms ease-out', style({ transform: 'translateX(100%)', opacity: 0}))
+        ])
+    ]);
+}
+```
+
+* Import the flyInOut into menu.component.ts and then define a new animation trigger within the Component decorator in menu.component.ts to introduce a view transition when the menu component view is routed to in the application
+
+```ts
+. . .
+import { flyInOut } from '../animations/app.animation';
+
+. . .
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+  '[@flyInOut]': 'true',
+  'style': 'display: block;'
+  },
+  animations: [
+    flyInOut()
+  ]
+  . . .
+```
+
+* Apply the same updates to home.component.ts, about.component.ts and contact.component.ts
+
+* Import flyInOut and then add the host property and the flyInOut\(\) also to dishdetail.component.ts
+
+
 
 
 
