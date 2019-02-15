@@ -213,7 +213,7 @@ json-server --watch db.json -d 2000
 
   Type s + enter at any time to create a snapshot of the database
   Watching...
-  
+
 GET /dishes 304 2003.493 ms - -
 GET /dishes 304 2005.414 ms - -
 GET /dishes/0 304 2007.389 ms - -
@@ -221,10 +221,118 @@ GET /dishes 304 2004.466 ms - -
 GET /dishes/0 304 2005.456 ms - -
 GET /dishes?featured=true 304 2003.632 ms - -
 GET /dishes?featured=true 304 2003.753 ms - -
-
 ```
 
+---
+
 # Angular HTTP Client: Error Handling
+
+### Add ProcessHTTPMsgService to Handle Errors
+
+* Create a new service named ProcessHTTPMsg in the services folder
+
+* Import the service into AppModule and include it in the providers property of the @NgModule decorator.
+
+* Update process-httpmsg.service.ts to include a function to handle errors
+
+```ts
+. . .
+
+import { throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+
+. . .
+
+
+  public handleError(error: HttpErrorResponse | any) {
+    let errMsg: string;
+
+    if (error.error instanceof ErrorEvent) {
+      errMsg = error.error.message;
+    } else {
+      errMsg = `${error.status} - ${error.statusText || ''} ${error.error}`;
+    }
+
+    return throwError(errMsg);
+  }
+  . . .
+```
+
+
+
+### Update Dish Service
+
+* Update dish.service.ts to catch and handle errors
+
+```ts
+. . .
+
+import { Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+
+. . .
+
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
+
+. . .
+
+  constructor(private http: HttpClient,
+    private processHTTPMsgService: ProcessHTTPMsgService) { }
+
+  getDishes(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(baseURL + 'dishes')
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+
+  getDish(id: number): Observable<Dish> {
+    return this.http.get<Dish>(baseURL + 'dishes/' + id)
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+
+  getFeaturedDish(): Observable<Dish> {
+    return this.http.get<Dish[]>(baseURL + 'dishes?featured=true').pipe(map(dishes => dishes[0]))
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+
+  getDishIds(): Observable<number[] | any> {
+    return this.getDishes().pipe(map(dishes => dishes.map(dish => dish.id)))
+      .pipe(catchError(error => error));
+  }
+  . . .
+```
+
+### Update Menu Component
+
+* Update menu.component.ts
+
+```ts
+. . .
+  errMess: string;
+. . .
+
+    this.dishService.getDishes()
+    .subscribe(dishes => this.dishes = dishes,
+      errmess => this.errMess = <any>errmess);
+. . .
+```
+
+* Update menu.component.html, Similarly update dishdetail.component.ts and dishdetail.component.html file
+
+```ts
+. . .
+  <div [hidden]="dishes || errMess">
+    . . .
+    
+  </div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+  
+  . . .
+```
+
+* Also update home.component.ts and home.component.html files similarly, but use the variable named dishErrMess instead of errMess.
 
 
 
