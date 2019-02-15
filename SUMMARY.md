@@ -43,4 +43,8 @@
     * [W4\_1-Client-Server Communication](front-end-javascript-frameworks-angular/week4/w41-client-server-communication.md)
     * [W4\_2-Angular and HTTP](front-end-javascript-frameworks-angular/week4/w42-angular-and-http.md)
     * [W4\_3-Animation and Directives](front-end-javascript-frameworks-angular/week4/w43-animation-and-directives.md)
+* [Front-End Web Development with React](front-end-web-development-with-react.md)
+  * [Week1](week1.md)
+    * [W1\_1-Introduction to React](week1/w11-introduction-to-react.md)
+    * [W1\_2-React Components](week1/w12-react-components.md)
 
