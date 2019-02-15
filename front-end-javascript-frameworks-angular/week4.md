@@ -67,3 +67,18 @@ import { Directive, ElementRef, Renderer2, HostListener  } from '@angular/core';
 
 
 
+### DEMO
+
+![](/assets/L2W4_3DirectiveDemo.png)
+
+---
+
+##  Angular Animations
+
+* Build animations using Angular with the same kind of native performance as pure CSS animations
+* Built on top of the Web Animations API
+  * For browsers not supporting the Web Animations API, need to use a polyfill web-animations.min.js
+* Tightly integrate the animation logic with the rest of the application code
+
+
+
