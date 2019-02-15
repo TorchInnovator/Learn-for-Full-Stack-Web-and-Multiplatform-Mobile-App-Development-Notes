@@ -22,6 +22,7 @@
     * [W4\_2-Less and Sass](front-end-web-ui-frameworks-and-tools-bootstrap-4/week4/w42-less-and-sass.md)
     * [W4\_3-NPM Scripts](front-end-web-ui-frameworks-and-tools-bootstrap-4/week4/w43-npm-scripts.md)
     * [W4\_4-Building and Deployment: Task Runners: Grunt and Gulp](front-end-web-ui-frameworks-and-tools-bootstrap-4/week4/w44-building-and-deployment-task-runners-grunt-and-gulp.md)
+  * Week4
 * [Front-End JavaScript Frameworks: Angular](front-end-javascript-frameworks-angular.md)
   * [Week1](front-end-javascript-frameworks-angular/week1.md)
     * [W1\_1-Introduction to Angular](front-end-javascript-frameworks-angular/week1/w1-introduction-to-angular.md)
@@ -39,4 +40,6 @@
     * [W3\_3-Angular and Promise](front-end-javascript-frameworks-angular/week3/w33-angular-and-promise.md)
     * [W3\_4-Angular Template-driven Forms](front-end-javascript-frameworks-angular/week3/w34-angular-template-driven-forms.md)
     * W3-Assignment
+  * [Week4](front-end-javascript-frameworks-angular/week4.md)
+    * [W4\_1-Client-Server Communication](front-end-javascript-frameworks-angular/week4/w41-client-server-communication.md)
 
