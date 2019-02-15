@@ -398,3 +398,40 @@ class App extends Component {
 
 ![](/assets/L2ReactW1Components2Demo.png)
 
+---
+
+##  React Components: Lifecycle Methods
+
+###  lifecycle stages:
+
+*  Mounting 
+* Updating 
+* Unmounting
+
+###  Mounting Lifecycle Methods
+
+* Called when an instance of a component is being created   and inserted into the DOM:
+  * constructor\(\)
+  * getDerivedStateFromProps\(\)
+  * render\(\)
+  * componentDidMount\(\)
+
+###  Updating Lifecycle Methods
+
+* Called when a component is being re-rendered
+  * Can be caused by changes to props or state
+  * getDerivedStateFromProps\(\)
+  * shouldComponentUpdate\(\)
+  * render\(\)
+  * getSnapshotBeforeUpdate\(\)
+  * componentDidUpdate\(\)
+
+###  Unmounting Lifecycle Methods
+
+* Is called when the component is being removed   from the DOM:
+  * componentWillUnmount\(\)
+* Error Handling: called when there is an error   during rendering, in a lifecycle method or in the   constructor of any child component
+  * componentDidCatch\(\)
+
+
+
