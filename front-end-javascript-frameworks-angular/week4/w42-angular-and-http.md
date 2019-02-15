@@ -102,14 +102,14 @@ import { HttpClientModule } from '@angular/common/http';
 . . .
 
 @NgModule({
-  
+
   . . . 
   imports: [ 
     . . . 
 
     HttpClientModule 
   ], 
-  
+
   . . .
 ```
 
@@ -163,10 +163,8 @@ import { baseURL } from '../shared/baseurl';
   getDishIds(): Observable<number[] | any> {
     return this.getDishes().pipe(map(dishes => dishes.map(dish => dish.id)));
   }
-  
+
   . . .
-
-
 ```
 
 ### Updating Menu Component
@@ -180,7 +178,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
   constructor(private dishService: DishService,
     @Inject('baseURL') private baseURL) { }
-    
+
 . . .
 ```
 
@@ -190,7 +188,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 ```html
 . . .
-        <img height="200px" src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
+        <img height="200px" src="{{ baseURL+ dish.image }}" alt={{dish.name}}>
 
 . . .
 ```
