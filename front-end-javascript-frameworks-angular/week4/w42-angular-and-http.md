@@ -27,7 +27,7 @@
 
 ---
 
-##  Brief Representational State Transfer \(REST\)
+## Brief Representational State Transfer \(REST\)
 
 ### Web Services
 
@@ -53,7 +53,7 @@
 
 * A collection of network architecture principles which outline how resources are defined and addressed
 
-*  Four basic design principles:
+* Four basic design principles:
 
   * Use HTTP methods explicitly
 
@@ -63,11 +63,9 @@
 
   * Transfer using XML, JavaScript Object Notation \(JSON\), or both
 
+### REST and HTTP
 
-
-###  REST and HTTP
-
-*  The motivation for REST was to capture the characteristics of the Web that made the Web successful
+* The motivation for REST was to capture the characteristics of the Web that made the Web successful
   * URI \(Uniform Resource Indicator\) Addressable resources
   * HTTP Protocol
   * Make a Request – Receive Response – Display Response
@@ -75,13 +73,11 @@
   * HTTP PUT, HTTP DELETE
   * Preserve Idempotence
 
-###  REST Concepts
+### REST Concepts
 
 ![](/assets/L2W4_2REST.png)
 
-
-
-###  Stateless Server
+### Stateless Server
 
 * Server side should not track the client state:
   * Every request is a new request from the client
@@ -89,6 +85,115 @@
   * E.g., using cookies, client side database
   * Every request must include sufficient information for server to serve up the requested information
   * Client-side MVC setup
+
+---
+
+## Angular HTTP Client
+
+### Configuring the Base Server URL
+
+* import the HttpClientModule in app.module.ts
+
+```ts
+. . .
+
+import { HttpClientModule } from '@angular/common/http';
+
+. . .
+
+@NgModule({
+  
+  . . . 
+  imports: [ 
+    . . . 
+
+    HttpClientModule 
+  ], 
+  
+  . . .
+```
+
+* Create a new file named baseurl.ts in the shared folder
+
+```ts
+export const baseURL = 'http://localhost:3000/';
+```
+
+* Open AppModule, import baseURL and update the AppModule's providers property of the @NgModule decorator
+
+```ts
+. . .
+import { baseURL } from './shared/baseurl';
+
+. . .
+
+providers: [
+  . . .
+  {provide: 'BaseURL', useValue: baseURL}
+  ]
+```
+
+### Updating the Dish Service
+
+* update dish.service.ts
+
+```ts
+. . .
+
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
+
+. . .
+
+  constructor(private http: HttpClient) { }
+
+  getDishes(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(baseURL + 'dishes');
+  }
+
+  getDish(id: number): Observable<Dish> {
+    return this.http.get<Dish>(baseURL + 'dishes/' + id);
+  }
+
+  getFeaturedDish(): Observable<Dish> {
+    return this.http.get<Dish[]>(baseURL + 'dishes?featured=true').pipe(map(dishes => dishes[0]));
+  }
+
+  getDishIds(): Observable<number[] | any> {
+    return this.getDishes().pipe(map(dishes => dishes.map(dish => dish.id)));
+  }
+  
+  . . .
+
+
+```
+
+### Updating Menu Component
+
+* update menu.component.ts
+
+```ts
+import { Component, OnInit, Inject } from '@angular/core';
+
+. . .
+
+  constructor(private dishService: DishService,
+    @Inject('baseURL') private baseURL) { }
+    
+. . .
+```
+
+* delete the DISHES import and the selectedDish variable and the onSelectDish\(\) method
+
+* update  menu.component.html , Similarly update dishdetail.component.html, dishdetail.component.ts, home.component.html and home.component.ts
+
+```html
+. . .
+        <img height="200px" src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
+
+. . .
+```
 
 
 
