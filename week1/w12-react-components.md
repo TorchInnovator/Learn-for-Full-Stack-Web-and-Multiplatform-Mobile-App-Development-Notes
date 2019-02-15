@@ -109,7 +109,7 @@ import Menu from './components/MenuComponent';
 
 ```js
  . . .
- 
+
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
@@ -175,12 +175,11 @@ class Menu extends Component {
 }
 
  . . .
- 
 ```
 
-* Add a folder named _shared _under the _src _folder
+* Add a folder named \_shared \_under the \_src \_folder
 
-* In the _shared _folder, create a new file named _dishes.js _and add the following content to it 
+* In the \_shared \_folder, create a new file named \_dishes.js \_and add the following content to it
 
 ```js
 export const DISHES =
@@ -395,5 +394,7 @@ class App extends Component {
 . . .
 ```
 
+### Demo
 
+![](/assets/L2ReactW1Components2Demo.png)
 
