@@ -1,10 +1,8 @@
 # React Components Part 1
 
-
-
 ### Adding a Menu Component
 
-* add a new folder named _components _in the _src and _create a new file named _MenuComponent.js _in this folder.
+* add a new folder named \_components \_in the \_src and \_create a new file named \_MenuComponent.js \_in this folder.
 
 * Add code in MenuComponent.js
 
@@ -85,7 +83,7 @@ class Menu extends Component {
 export default Menu;
 ```
 
-* update _App.js _file
+* update \_App.js \_file
 
 ```js
 . . .
@@ -95,9 +93,11 @@ import Menu from './components/MenuComponent';
 . . .
 
     <Menu />
-    
+
     . . .
 ```
+
+### Demo![](/assets/L2ReactW1Components Demo.png)
 
 
 
