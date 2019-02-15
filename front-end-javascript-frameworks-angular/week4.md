@@ -241,5 +241,39 @@ import { flyInOut } from '../animations/app.animation';
 
 
 
+### Animation to Render View from Fetched Data
+
+* Add a new factory in app.animation.ts:
+
+```ts
+export function expand() {
+    return trigger('expand', [
+        state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+        transition(':enter', [
+            style({ transform: 'translateY(-50%)', opacity:0 }),
+            animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
+        ])
+    ]);
+}
+```
+
+* import the new function and add the following to the animations in menu.component.ts, about.component.ts, dishdetail.component.ts and home.component.ts
+
+```ts
+. . .
+
+import { flyInOut, expand } from '../animations/app.animation';
+
+. . .
+
+  animations: [
+    . . .
+    expand()
+  ]
+    . . .
+```
+
+* Then apply the \[@expand\] attribute to all those elements within the views of the above components where the data is being fetched from the service before rendering the view.
+
 
 
