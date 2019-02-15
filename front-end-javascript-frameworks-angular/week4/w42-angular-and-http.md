@@ -235,7 +235,6 @@ GET /dishes?featured=true 304 2003.753 ms - -
 
 ```ts
 import { ProcessHTTPMsgService} from './services/process-httpmsg.service'
-
 ```
 
 * Update process-httpmsg.service.ts to include a function to handle errors
@@ -349,8 +348,17 @@ import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 ### Updating Dish
 
-* 
-  
+* update  dish.service.ts
+
+```ts
+
+```
+
+* update dishdetail.component.ts
+
+```ts
+
+```
 
 
 
