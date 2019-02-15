@@ -193,5 +193,38 @@ import { Component, OnInit, Inject } from '@angular/core';
 . . .
 ```
 
+### Demo
+
+```
+json-server --watch db.json -d 2000
+ \{^_^}/ hi!
+
+  Loading db.json
+  Done
+
+  Resources
+  http://localhost:3000/dishes
+  http://localhost:3000/promotions
+  http://localhost:3000/leadership
+  http://localhost:3000/feedback
+
+  Home
+  http://localhost:3000
+
+  Type s + enter at any time to create a snapshot of the database
+  Watching...
+  
+GET /dishes 304 2003.493 ms - -
+GET /dishes 304 2005.414 ms - -
+GET /dishes/0 304 2007.389 ms - -
+GET /dishes 304 2004.466 ms - -
+GET /dishes/0 304 2005.456 ms - -
+GET /dishes?featured=true 304 2003.632 ms - -
+GET /dishes?featured=true 304 2003.753 ms - -
+
+```
+
+# Angular HTTP Client: Error Handling
+
 
 
