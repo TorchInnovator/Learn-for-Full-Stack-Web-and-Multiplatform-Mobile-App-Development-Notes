@@ -1,23 +1,23 @@
 ### Client-Server Communication
 
-##  Networking Essentials
+## Networking Essentials
 
-###  Client and Server
+### Client and Server
 
-*  Web applications are not stand-alone
+* Web applications are not stand-alone
 * Many of them have a “Cloud” backend![](/assets/L2W4_1HTTP.png)
 
-###  Client-Server Communication
+### Client-Server Communication
 
-*  Network operations cause unexpected delays
+* Network operations cause unexpected delays
 * You need to write applications recognizing the asynchronous nature of communication
   * Data is not instantaneously available
 
-###  Hypertext Transfer Protocol \(HTTP\)
+### Hypertext Transfer Protocol \(HTTP\)
 
-*  A client-server communications protocol
+* A client-server communications protocol
 * Allows retrieving inter- linked text documents \(hypertext\) – World Wide Web.
-*  HTTP Verbs
+* HTTP Verbs
 
   * HEAD
 
@@ -37,25 +37,26 @@
 
 ![](/assets/W4_1HTTPDemo.png)
 
-###  HTTP Request Message
+### HTTP Request Message
 
 ![](/assets/L2W4HTTPRequestMessage.png)
 
-###  HTTP Response
+### HTTP Response
 
-*  Server may send back data in a specific format:
+* Server may send back data in a specific format:
 
-  * eXtensible Markup Language \(XML\) 
+  * eXtensible Markup Language \(XML\)
 
   * Javascript Object Notation \(JSON\)
 
-###  Javascript Object Notation \(JSON\)
+### Javascript Object Notation \(JSON\)
 
-*  Lightweight data interchange format
+* Lightweight data interchange format
 * Language independent \*
 * Self-describing and easy to understand
 * Data Structured as:
-  *  A collection of name/value pairs
+
+  * A collection of name/value pairs
 
   * Ordered list of values
 
@@ -77,7 +78,7 @@ json-server --watch db.json -d 2000
 
 * download db.json file in json-server
 
-* start server 
+* start server
 
 ```
 json-server --watch db.json -d 2000
