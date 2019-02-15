@@ -1,8 +1,8 @@
 # Animation and Directives
 
-##  Attribute Directives
+## Attribute Directives
 
-### Directives 
+### Directives
 
 * Angular templates are dynamic
 * Directives give instructions to Angular on how to render the templates to the DOM
@@ -10,18 +10,19 @@
 * A component is a special kind of directive with a template associated to it
 * Two other kinds of directives in Angular: Structural and Attribute
 
-
-
 ## Custom Attribute Directives
 
 ### Adding a New Directive
 
-* Create a new folder named _directives _within the app folder
+* Create a new folder named \_directives \_within the app folder
 
 * Using Angular-CLI add a new directive named highlight
 
 ```
 ng g directive directives/highlight
+CREATE src/app/directives/highlight.directive.spec.ts (236 bytes)
+CREATE src/app/directives/highlight.directive.ts (147 bytes)
+UPDATE src/app/app.module.ts (3238 bytes)
 ```
 
 * Update highlight.directive.ts
@@ -41,7 +42,7 @@ import { Directive, ElementRef, Renderer2, HostListener  } from '@angular/core';
   @HostListener('mouseleave') onMouseLeave() {
     this.renderer.removeClass(this.el.nativeElement, 'highlight');
   }
-  
+
   . . .
 ```
 
