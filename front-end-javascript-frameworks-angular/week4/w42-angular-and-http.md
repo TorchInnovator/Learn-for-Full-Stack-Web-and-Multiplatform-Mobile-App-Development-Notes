@@ -225,13 +225,18 @@ GET /dishes?featured=true 304 2003.753 ms - -
 
 ---
 
-# Angular HTTP Client: Error Handling
+## Angular HTTP Client: Error Handling
 
 ### Add ProcessHTTPMsgService to Handle Errors
 
 * Create a new service named ProcessHTTPMsg in the services folder
 
 * Import the service into AppModule and include it in the providers property of the @NgModule decorator.
+
+```ts
+import { ProcessHTTPMsgService} from './services/process-httpmsg.service'
+
+```
 
 * Update process-httpmsg.service.ts to include a function to handle errors
 
@@ -257,8 +262,6 @@ import { HttpErrorResponse } from '@angular/common/http';
   }
   . . .
 ```
-
-
 
 ### Update Dish Service
 
@@ -322,17 +325,32 @@ import { ProcessHTTPMsgService } from './process-httpmsg.service';
 . . .
   <div [hidden]="dishes || errMess">
     . . .
-    
+
   </div>
   <div fxFlex *ngIf="errMess">
     <h2>Error</h2>
     <h4>{{errMess}}</h4>
   </div>
-  
+
   . . .
 ```
 
 * Also update home.component.ts and home.component.html files similarly, but use the variable named dishErrMess instead of errMess.
+
+### Demo
+
+* make mistake in dishservice.ts then the web page will show error message like this
+
+![](/assets/L2W4_2Error HandlingDemo.png)
+
+---
+
+## Angular and REST: Saving Changes to Server
+
+### Updating Dish
+
+* 
+  
 
 
 
