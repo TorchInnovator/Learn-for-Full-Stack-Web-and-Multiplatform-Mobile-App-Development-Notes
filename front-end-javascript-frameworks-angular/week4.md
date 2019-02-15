@@ -1,5 +1,14 @@
 # Animation and Directives
 
+## Angular Animations
+
+* Build animations using Angular with the same kind of native performance as pure CSS animations
+* Built on top of the Web Animations API
+  * For browsers not supporting the Web Animations API, need to use a polyfill web-animations.min.js
+* Tightly integrate the animation logic with the rest of the application code
+
+---
+
 ## Attribute Directives
 
 ### Directives
@@ -65,20 +74,135 @@ import { Directive, ElementRef, Renderer2, HostListener  } from '@angular/core';
 . . .
 ```
 
-
-
 ### DEMO
 
 ![](/assets/L2W4_3DirectiveDemo.png)
 
 ---
 
-##  Angular Animations
+## Angular Animations Part 1
 
-* Build animations using Angular with the same kind of native performance as pure CSS animations
-* Built on top of the Web Animations API
-  * For browsers not supporting the Web Animations API, need to use a polyfill web-animations.min.js
-* Tightly integrate the animation logic with the rest of the application code
+### Adding Animation Support
+
+* included the Animation library into Angular application
+
+```
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+```
+
+* dishdetail.component.ts and add the following to it to include various Animation classes
+
+```
+import { trigger, state, style, animate, transition } from '@angular/animations';
+```
+
+* Define a new animation trigger within the Component decorator
+
+```ts
+. . .
+
+@Component({
+
+. . . ,
+  animations: [
+    trigger('visibility', [
+        state('shown', style({
+            transform: 'scale(1.0)',
+            opacity: 1
+        })),
+        state('hidden', style({
+            transform: 'scale(0.5)',
+            opacity: 0
+        })),
+        transition('* => *', animate('0.5s ease-in-out'))
+    ])
+  ]
+  
+  . . .
+})
+. . .
+```
+
+* update the DishDetailComponent class
+
+```ts
+. . .
+
+  visibility = 'shown';
+. . .
+
+    this.route.params.pipe(switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(+params['id']); }))
+    .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); this.visibility = 'shown'; },
+      errmess => this.errMess = <any>errmess);
+          . . .
+```
+
+* update dishdetail.component.html
+
+```html
+. . .
+
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+
+. . .
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+
+. . .
+```
+
+## Angular Animations Part 2
+
+### Refactoring the Code
+
+* Because we need to multiple animations in application , so refactor code.
+
+* Create a folder named animations in app folder, and create named app.animation.ts in that
+
+* Move dishdetail.component.ts's animation function to app.animation.ts
+
+```ts
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
+export function visibility() {
+    return trigger('visibility', [
+        state('shown', style({
+            transform: 'scale(1.0)',
+            opacity: 1
+        })),
+        state('hidden', style({
+            transform: 'scale(0.5)',
+            opacity: 0
+        })),
+        transition('* => *', animate('0.5s ease-in-out'))
+    ]);
+}
+```
+
+* update dishdetail.component.ts to make use of the animation factory function defined
+
+```ts
+. . .
+import { visibility } from '../animations/app.animation';
+
+. . .
+
+  animations: [
+    visibility()
+  ]
+  . . .
+```
+
+* Remove the following line from dishdetail.component.ts since it's already included in app.animation.ts
+
+```ts
+import { trigger, state, style, animate, transition } from '@angular/animations';
+```
+
+### Adding Animation Support for Route Changes
+
+* 
+  
 
 
 
