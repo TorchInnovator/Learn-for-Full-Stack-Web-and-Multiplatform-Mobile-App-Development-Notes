@@ -47,4 +47,8 @@
   * [Week1](week1.md)
     * [W1\_1-Introduction to React](week1/w11-introduction-to-react.md)
     * [W1\_2-React Components](week1/w12-react-components.md)
+* [Server-side Development with NodeJS, Express and MongoDB](server-side-development-with-nodejs-express-and-mongodb.md)
+  * [Week1](server-side-development-with-nodejs-express-and-mongodb/week1.md)
+    * [W1\_1-Node Modules](server-side-development-with-nodejs-express-and-mongodb/week1/w11-node-modules.md)
+    * W1\_2-Node and HTTP
 
