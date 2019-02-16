@@ -16,16 +16,16 @@ npm init
 
 ```json
 {
-  "name": "node-express",
-  "version": "1.0.0",
-  "description": "Node Express Examples",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
-  },
-  "author": "Jogesh Muppala",
-  "license": "ISC"
+"name": "node-express",
+"version": "1.0.0",
+"description": "Node Express Examples",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"start": "node index"
+},
+"author": "Jogesh Muppala",
+"license": "ISC"
 }
 
 ```
@@ -44,27 +44,27 @@ node_modules
 
 * Create a file named _index.js_
 
-    const express = require('express'),
-         http = require('http');
+const express = require('express'),
+http = require('http');
 
-    const hostname = 'localhost';
-    const port = 3000;
+const hostname = 'localhost';
+const port = 3000;
 
-    const app = express();
+const app = express();
 
-    app.use((req, res, next) => {
-      console.log(req.headers);
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html');
-      res.end('<html><body><h1>This is an Express Server</h1></body></html>');
+app.use((req, res, next) => {
+console.log(req.headers);
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/html');
+res.end('<html><body><h1>This is an Express Server</h1></body></html>');
 
-    });
+});
 
-    const server = http.createServer(app);
+const server = http.createServer(app);
 
-    server.listen(port, hostname, () => {
-      console.log(`Server running at http://${hostname}:${port}/`);
-    });
+server.listen(port, hostname, () => {
+console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 * Start the server
 
@@ -98,12 +98,9 @@ app.use(express.static(__dirname + '/public'));
 
 * Start the server
 
-  ```
-  npm start
+```
+npm start
 
-  ```
+```
 
 # Express Router
-
-
-
