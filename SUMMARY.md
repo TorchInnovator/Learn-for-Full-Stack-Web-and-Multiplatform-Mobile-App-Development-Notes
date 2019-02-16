@@ -51,4 +51,5 @@
   * [Week1](server-side-development-with-nodejs-express-and-mongodb/week1.md)
     * [W1\_1-Node Modules](server-side-development-with-nodejs-express-and-mongodb/week1/w11-node-modules.md)
     * W1\_2-Node and HTTP
+    * [W1\_3-Introduction to Express](server-side-development-with-nodejs-express-and-mongodb/week1/w13-introduction-to-express.md)
 
