@@ -138,7 +138,7 @@ app.put('/dishes', (req, res, next) => {
   res.statusCode = 403;
   res.end('PUT operation not supported on /dishes');
 });
- 
+
 app.delete('/dishes', (req, res, next) => {
     res.end('Deleting all dishes');
 });
@@ -160,16 +160,15 @@ app.put('/dishes/:dishId', (req, res, next) => {
 
 app.delete('/dishes/:dishId', (req, res, next) => {
     res.end('Deleting dish: ' + req.params.dishId);
-});
 
 . . .
 ```
 
 ### Using Express Router
 
-* Create a new folder named _routes _in the _node-express _folder
+* Create a new folder named \_routes \_in the \_node-express \_folder
 
-* Create a new file named _dishRouter.js _in the _routes _folder
+* Create a new file named \_dishRouter.js \_in the \_routes \_folder
 
 ```js
 const express = require('express');
@@ -214,6 +213,63 @@ app.use('/dishes', dishRouter);
 
 . . .
 ```
+
+### Postman Test
+
+* GET
+  * URL:
+
+  ```
+  http://localhost:3000/dishes
+  ```
+
+  * Response:
+
+  ```
+  Will send all the dishes to you!
+  ```
+* POST
+  * URL :
+
+  ```
+  http://localhost:3000/dishes
+  ```
+
+  * Body
+
+  ```
+  {"name":"test", "description":"test description"}
+  ```
+
+  * Response:
+
+  ```
+  Will add the dish: test with details: test description
+  ```
+* PUT
+  * URL
+
+  ```
+  http://localhost:3000/dishes
+  ```
+
+  * Response
+
+  ```
+  PUT operation not supported on /dishes
+  ```
+* DELETE
+  * * URL
+
+    ```
+    http://localhost:3000/dishes
+    ```
+
+    * Response
+
+    ```
+    Deleting all dishes
+    ```
 
 
 
