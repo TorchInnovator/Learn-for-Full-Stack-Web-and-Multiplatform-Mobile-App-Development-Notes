@@ -116,15 +116,129 @@ Connected correctly to server
 (node:7820) DeprecationWarning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
 ```
 
-
-
 # Mongoose ODM Part 2
 
 ### Mongoose Operations
 
 * Update _index.js_
 
-* 
+```js
+Dishes.create({
+        name: 'Uthapizza',
+        description: 'Test'
+    })
+    .then((dish) => {
+        console.log(dish);
+        
+        return Dishes.find({}).exec();
+    })
+    .then((dishes) => {
+        console.log(dishes);
+
+        return Dishes.remove({});
+    })
+    .then(() => {
+        return mongoose.connection.close();
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+```
+
+* Run this server to see the result
+
+
+
+### Adding Sub-documents to a Document
+
+* Update _dishes.js_
+
+```js
+. . .
+
+var commentSchema = new Schema({
+    rating:  {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: true
+    },
+    comment:  {
+        type: String,
+        required: true
+    },
+    author:  {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
+});
+
+var dishSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    comments:[commentSchema]
+}, {
+    timestamps: true
+});
+
+. . .
+```
+
+* Update _index.js_
+
+```js
+. . .
+
+    Dishes.create({
+        name: 'Uthappizza',
+        description: 'test'
+    })
+    .then((dish) => {
+        console.log(dish);
+
+        return Dishes.findByIdAndUpdate(dish._id, {
+            $set: { description: 'Updated test'}
+        },{ 
+            new: true 
+        })
+        .exec();
+    })
+    .then((dish) => {
+        console.log(dish);
+
+        dish.comments.push({
+            rating: 5,
+            comment: 'I\'m getting a sinking feeling!',
+            author: 'Leonardo di Carpaccio'
+        });
+
+        return dish.save();
+    })
+    .then((dish) => {
+        console.log(dish);
+
+        return Dishes.remove({});
+    })
+    .then(() => {
+        return mongoose.connection.close();
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+    
+. . .
+```
+
+* Run this server to see the result  
 
 
 
