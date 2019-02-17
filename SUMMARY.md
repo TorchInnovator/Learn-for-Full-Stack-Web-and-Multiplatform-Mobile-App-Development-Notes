@@ -52,4 +52,7 @@
     * [W1\_1-Node Modules](server-side-development-with-nodejs-express-and-mongodb/week1/w11-node-modules.md)
     * [W1\_2-Node and HTTP](server-side-development-with-nodejs-express-and-mongodb/week1/w12-node-and-http.md)
     * [W1\_3-Introduction to Express](server-side-development-with-nodejs-express-and-mongodb/week1/w13-introduction-to-express.md)
+  * [Week2](server-side-development-with-nodejs-express-and-mongodb/week2.md)
+    * [W2\_1-Express Generator](server-side-development-with-nodejs-express-and-mongodb/week2/w21-express-generator.md)
+    * [W2\_2-Introduction to MongoDB](server-side-development-with-nodejs-express-and-mongodb/week2/w22-introduction-to-mongodb.md)
 
