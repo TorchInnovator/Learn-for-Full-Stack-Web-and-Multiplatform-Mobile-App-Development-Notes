@@ -129,7 +129,7 @@ Dishes.create({
     })
     .then((dish) => {
         console.log(dish);
-        
+
         return Dishes.find({}).exec();
     })
     .then((dishes) => {
@@ -147,7 +147,22 @@ Dishes.create({
 
 * Run this server to see the result
 
-
+```
+npm start
+Connected correctly to server
+{ _id: 5c6912d789e18e0dc81a6398,
+  name: 'Uthappizza',
+  description: 'test',
+  createdAt: 2019-02-17T07:52:55.917Z,
+  updatedAt: 2019-02-17T07:52:55.917Z,
+  __v: 0 }
+[ { _id: 5c6912d789e18e0dc81a6398,
+    name: 'Uthappizza',
+    description: 'test',
+    createdAt: 2019-02-17T07:52:55.917Z,
+    updatedAt: 2019-02-17T07:52:55.917Z,
+    __v: 0 } ]
+```
 
 ### Adding Sub-documents to a Document
 
@@ -234,11 +249,46 @@ var dishSchema = new Schema({
     .catch((err) => {
         console.log(err);
     });
-    
+
 . . .
 ```
 
-* Run this server to see the result  
+* Run this server to see the result 
+
+```
+npm start
+Connected correctly to server
+{ _id: 5c6913814ee2ab2b1c61d65e,
+  name: 'Uthappizza',
+  description: 'test',
+  comments: [],
+  createdAt: 2019-02-17T07:55:45.035Z,
+  updatedAt: 2019-02-17T07:55:45.035Z,
+  __v: 0 }
+(node:11036) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+{ _id: 5c6913814ee2ab2b1c61d65e,
+  name: 'Uthappizza',
+  description: 'Updated test',
+  comments: [],
+  createdAt: 2019-02-17T07:55:45.035Z,
+  updatedAt: 2019-02-17T07:55:46.052Z,
+  __v: 0 }
+{ _id: 5c6913814ee2ab2b1c61d65e,
+  name: 'Uthappizza',
+  description: 'Updated test',
+  comments:
+   [ { _id: 5c6913824ee2ab2b1c61d65f,
+       rating: 5,
+       comment: 'I\'m getting a sinking feeling!',
+       author: 'Leonardo di Carpaccio',
+       createdAt: 2019-02-17T07:55:46.065Z,
+       updatedAt: 2019-02-17T07:55:46.065Z } ],
+  createdAt: 2019-02-17T07:55:45.035Z,
+  updatedAt: 2019-02-17T07:55:46.065Z,
+  __v: 1 }
+```
+
+
 
 
 
