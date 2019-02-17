@@ -313,5 +313,24 @@ MongoClient.connect(url).then((client) => {
 
 * Run the node application
 
+```
+npm start
+Insert Document:
+ [ { name: 'Vadonut',
+    description: 'Test',
+    _id: 5c690fa09da4d141c03674e3 } ]
+Found Documents:
+ [ { _id: 5c690fa09da4d141c03674e3,
+    name: 'Vadonut',
+    description: 'Test' } ]
+Updated Document:
+ { n: 1, nModified: 1, ok: 1 }
+Found Updated Documents:
+ [ { _id: 5c690fa09da4d141c03674e3,
+    name: 'Vadonut',
+    description: 'Updated Test' } ]
+Dropped Collection:  true
+```
+
 
 
