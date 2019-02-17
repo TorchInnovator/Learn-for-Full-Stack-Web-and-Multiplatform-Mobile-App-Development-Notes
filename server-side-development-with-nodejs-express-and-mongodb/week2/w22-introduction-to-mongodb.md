@@ -110,6 +110,24 @@ MongoClient.connect(url, (err, client) => {
 
 * start the server  
 
+```
+npm start
+Connected correctly to server
+After Insert:
+
+[ { name: 'Uthappizza',
+    description: 'test',
+    _id: 5c690465cb6c562148f8675c } ]
+Found:
+
+[ { _id: 5c68fe1d9be9b047ad0ff4f9,
+    name: 'Uthappizza',
+    description: 'Test' },
+  { _id: 5c690465cb6c562148f8675c,
+    name: 'Uthappizza',
+    description: 'test' } ]
+```
+
 # Exercise \(Instructions\): Node and MongoDB Part 2
 
 ### Implementing a Node Module of Database Operations
@@ -197,7 +215,26 @@ const dboper = require('./operations');
 
 * Run the server  
 
-
+```
+npm start
+Inserted 1 documents into the collection dishes
+Insert Document:
+ [ { name: 'Vadonut',
+    description: 'Test',
+    _id: 5c690d1c9685b0329c884741 } ]
+Found Documents:
+ [ { _id: 5c690d1c9685b0329c884741,
+    name: 'Vadonut',
+    description: 'Test' } ]
+Updated the document with  { description: 'Updated Test' }
+Updated Document:
+ { n: 1, nModified: 1, ok: 1 }
+Found Updated Documents:
+ [ { _id: 5c690d1c9685b0329c884741,
+    name: 'Vadonut',
+    description: 'Updated Test' } ]
+Dropped Collection:  null
+```
 
 # Callback Hell and Promises
 
@@ -227,7 +264,6 @@ exports.updateDocument = (db, document, update, collection, callback) => {
     const coll = db.collection(collection);
     return coll.updateOne(document, { $set: update }, null);
 };
-
 ```
 
 * Update index.js
@@ -261,7 +297,7 @@ MongoClient.connect(url).then((client) => {
         })
         .then((docs) => {
             console.log("Found Updated Documents:\n", docs);
-                            
+
             return db.dropCollection("dishes");
         })
         .then((result) => {

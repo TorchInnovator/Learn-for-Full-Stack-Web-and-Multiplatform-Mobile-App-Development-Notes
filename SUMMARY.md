@@ -55,4 +55,5 @@
   * [Week2](server-side-development-with-nodejs-express-and-mongodb/week2.md)
     * [W2\_1-Express Generator](server-side-development-with-nodejs-express-and-mongodb/week2/w21-express-generator.md)
     * [W2\_2-Introduction to MongoDB](server-side-development-with-nodejs-express-and-mongodb/week2/w22-introduction-to-mongodb.md)
+    * [W2\_3-Mongoose ODM](server-side-development-with-nodejs-express-and-mongodb/week2/w23-mongoose-odm.md)
 
