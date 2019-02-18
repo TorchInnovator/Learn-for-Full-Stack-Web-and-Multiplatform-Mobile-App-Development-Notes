@@ -287,12 +287,13 @@ function auth (req, res, next) {
   }
 }
 
-. . 
+. .
 ```
 
 ### Postman test
 
 * POST
+
   * URL : 
 
   ```
@@ -340,6 +341,7 @@ function auth (req, res, next) {
 ```
 
 * POST login
+
   * URL:
 
   ```
@@ -353,6 +355,7 @@ You are authenticated!
 ```
 
 * GET logout
+
   * URL
 
   ```
