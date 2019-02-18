@@ -22,18 +22,15 @@
 
 ![](/assets/BackendW3_1EA.png)
 
-
-
 ---
 
 # Basic Authentication
 
 ### Setting up Basic Authentication
 
-* update _app.js _file
+* update \_app.js \_file
 
 ```js
-
 . . .
 
 function auth (req, res, next) {
@@ -67,9 +64,35 @@ app.use(auth);
 
 * start the server.
 
+```
+npm start
+Connected correctly to server
+{ host: 'localhost:3000',
+  connection: 'keep-alive',
+  'upgrade-insecure-requests': '1',
+  'user-agent':
+   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
+  accept:
+   'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  cookie:
+   'csrftoken=L95Zlz58KpGfAFHQJo3lr1IajgwLsgFkYBTKkAdcDaO6vXFfhCCy0lUI3gGNs3H4' }
+GET / 401 1352.518 ms - 2982
+{ host: 'localhost:3000',
+  connection: 'keep-alive',
+  authorization: 'Basic YWRtaW46cGFzc3dvcmQ=',
+  'upgrade-insecure-requests': '1',
+  'user-agent':
+   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
+  accept:
+   'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  cookie:
+   'csrftoken=L95Zlz58KpGfAFHQJo3lr1IajgwLsgFkYBTKkAdcDaO6vXFfhCCy0lUI3gGNs3H4' }
+GET / 200 4.424 ms - 142
+```
+
 ![](/assets/BackendW3_1Authentication.png)
-
-
-
-
 
