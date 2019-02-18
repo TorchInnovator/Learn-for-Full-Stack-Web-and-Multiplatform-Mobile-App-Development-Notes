@@ -94,5 +94,11 @@ GET / 401 1352.518 ms - 2982
 GET / 200 4.424 ms - 142
 ```
 
-![](/assets/BackendW3_1Authentication.png)
+![](/assets/BackendW3_1Authenticated.png)
+
+* Postman
+
+![](/assets/backendW3_1Postman.png)
+
+
 

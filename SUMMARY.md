@@ -59,4 +59,5 @@
     * [W2\_4-REST API with Express, MongoDB and Mongoose](server-side-development-with-nodejs-express-and-mongodb/week2/w24-rest-api-with-express-mongodb-and-mongoose.md)
   * [Week3](server-side-development-with-nodejs-express-and-mongodb/week3.md)
     * [W3\_1-Basic Authentication](server-side-development-with-nodejs-express-and-mongodb/week3/w31-basic-authentication.md)
+    * [W3\_2-Cookies, Tea and err Express Sessions](server-side-development-with-nodejs-express-and-mongodb/week3/w32-cookies-tea-and-err-express-sessions.md)
 
