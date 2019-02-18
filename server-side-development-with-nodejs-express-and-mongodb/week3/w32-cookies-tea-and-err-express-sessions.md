@@ -1,11 +1,11 @@
-#  Cookies, Tea and err . . . Express Session
+# Cookies, Tea and err . . . Express Session
 
-###  HTTP Cookies
+### HTTP Cookies
 
 * Small piece of data sent from a web server and stored on the client side
 * Each subsequent request from the client side should include the cookie in the request header
 
-###  Cookies
+### Cookies
 
 ![](/assets/backendW3_2Cookies.png)
 
@@ -69,7 +69,7 @@ function auth (req, res, next) {
 
 ### Installing express-session
 
-* install _express-session _and _session-file-store _Node modules 
+* install \_express-session \_and \_session-file-store \_Node modules 
 
 ```
      npm install express-session session-file-store --save
@@ -140,7 +140,7 @@ function auth (req, res, next) {
 
 ### User Model and User Authentication
 
-* Add a new Mongoose model for _users _in the file named _user.js_
+* Add a new Mongoose model for _users \_in the file named \_user.js_
 
 ```js
 var mongoose = require('mongoose');
@@ -165,7 +165,7 @@ var User = new Schema({
 module.exports = mongoose.model('User', User);
 ```
 
-* Update _users.js _in the routes folder to support user registration
+* Update \_users.js \_in the routes folder to support user registration
 
 ```js
 . . .
@@ -203,18 +203,18 @@ router.post('/login', (req, res, next) => {
 
   if(!req.session.user) {
     var authHeader = req.headers.authorization;
-    
+
     if (!authHeader) {
       var err = new Error('You are not authenticated!');
       res.setHeader('WWW-Authenticate', 'Basic');
       err.status = 401;
       return next(err);
     }
-  
+
     var auth = new Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
     var username = auth[0];
     var password = auth[1];
-  
+
     User.findOne({username: username})
     .then((user) => {
       if (user === null) {
@@ -287,8 +287,93 @@ function auth (req, res, next) {
   }
 }
 
-. . .
+. . 
+```
 
+### Postman test
+
+* POST
+  * URL : 
+
+  ```
+  http://localhost:3000/users/signup
+  ```
+
+  * require body:
+
+  ```json
+  {"username":"jay","password":"password"}
+  ```
+
+  * response:
+
+  ```json
+  {
+      "status": "Registration Successful!",
+      "user": {
+          "admin": false,
+          "_id": "5c6a980eba390c42c85d4df3",
+          "username": "jay",
+          "password": "password",
+          "__v": 0
+      }
+  }
+  ```
+
+* POST again
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h1>User jay already exists!</h1>
+        <h2>403</h2>
+        <pre>Error: User jay already exists!
+    at User.findOne.then (D:\Downloads\FullStackHW\Server-side Development with NodeJS, Express and MongoDB\NodeJS\conFusionServer\routes\users.js:17:17)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre>
+    </body>
+</html>
+```
+
+* POST login
+  * URL:
+
+  ```
+  http://localhost:3000/users/login
+  ```
+
+  * Response
+
+```
+You are authenticated!
+```
+
+* GET logout
+  * URL
+
+  ```
+  http://localhost:3000/users/logout
+  ```
+
+  * Response
+    * cookies is empty
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Express</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h1>Express</h1>
+        <p>Welcome to Express</p>
+    </body>
+</html>
 ```
 
 
