@@ -57,4 +57,6 @@
     * [W2\_2-Introduction to MongoDB](server-side-development-with-nodejs-express-and-mongodb/week2/w22-introduction-to-mongodb.md)
     * [W2\_3-Mongoose ODM](server-side-development-with-nodejs-express-and-mongodb/week2/w23-mongoose-odm.md)
     * [W2\_4-REST API with Express, MongoDB and Mongoose](server-side-development-with-nodejs-express-and-mongodb/week2/w24-rest-api-with-express-mongodb-and-mongoose.md)
+  * [Week3](server-side-development-with-nodejs-express-and-mongodb/week3.md)
+    * [W3\_1-Basic Authentication](server-side-development-with-nodejs-express-and-mongodb/week3/w31-basic-authentication.md)
 
