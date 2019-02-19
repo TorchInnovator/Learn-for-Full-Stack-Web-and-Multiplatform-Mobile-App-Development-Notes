@@ -60,4 +60,5 @@
   * [Week3](server-side-development-with-nodejs-express-and-mongodb/week3.md)
     * [W3\_1-Basic Authentication](server-side-development-with-nodejs-express-and-mongodb/week3/w31-basic-authentication.md)
     * [W3\_2-Cookies, Tea and err Express Sessions](server-side-development-with-nodejs-express-and-mongodb/week3/w32-cookies-tea-and-err-express-sessions.md)
+    * [W3\_3-User Authentication with Passport](server-side-development-with-nodejs-express-and-mongodb/week3/w33-user-authentication-with-passport.md)
 
