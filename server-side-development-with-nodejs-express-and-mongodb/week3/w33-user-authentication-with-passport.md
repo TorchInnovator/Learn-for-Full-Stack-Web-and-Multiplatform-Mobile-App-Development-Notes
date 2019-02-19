@@ -152,6 +152,7 @@ function auth (req, res, next) {
   ```
 
 * GET dishes
+
   * URL : [http://localhost:3000/dishes](http://localhost:3000/dishes)
   * Response:\[\]
 
@@ -220,12 +221,173 @@ exports.jwtPassport = passport.use(new JwtStrategy(opts,
     }));
 
 exports.verifyUser = passport.authenticate('jwt', {session: false});
+```
+
+* update _users.js _file
+
+```js
+. . .
+
+var authenticate = require('../authenticate');
+
+. . .
+
+router.post('/login', passport.authenticate('local'), (req, res) => {
+
+  var token = authenticate.getToken({_id: req.user._id});
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.json({success: true, token: token, status: 'You are successfully logged in!'});
+});
+
+. . .
+```
+
+* Update app.js to remove the auth function and the app.use\(auth\)
+
+```js
+. . .
+
+var config = require('./config');
+
+
+. . .
+
+const url = config.mongoUrl;
+
+. . .
+
 
 ```
 
 ### Controlling Routes with Authentication
 
-* 
+* updated _dishRouter.js and similar updates to promoRouter.js and leaderRouter.js._
+
+```js
+. . .
+
+var authenticate = require('../authenticate');
+
+. . .
+
+
+dishRouter.route('/')
+
+
+.post(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.put(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.delete(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+});
+
+
+dishRouter.route('/:dishId')
+
+
+.post(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.put(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.delete(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+});
+
+
+dishRouter.route('/:dishId/comments')
+
+
+.post(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.put(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.delete(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+});
+
+
+dishRouter.route('/:dishId/comments/:commentId')
+
+
+.post(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.put(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+})
+
+.delete(authenticate.verifyUser, (req, res, next) => {
+
+   . . .
+
+});
+
+
+. . .
+```
+
+### Postman Test
+
+* POST login
+  * URL : http://localhost:3000/users/login
+  * Body:
+
+  ```
+  {"username":"jay1","password":"password"}
+  ```
+
+  * Response:
+
+  ```
+  {
+      "success": true,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzZiYzE5ODExMmI1NTQ0MGNlZDdiYzIiLCJpYXQiOjE1NTA1NjczNjIsImV4cCI6MTU1MDU3MDk2Mn0.KnGmLT7mdUOoPcJ5_ZM4lRSOS6_xCvbbs9QitK6AeGs",
+      "status": "You are successfully logged in!"
+  }
+  ```
+
+  * go jwt.io
+
+![](/assets/backendW3_3jwtIO.png)
+
+
 
 
 
