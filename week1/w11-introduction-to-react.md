@@ -2,13 +2,11 @@
 
 ### Installing Yarn
 
-* To install _create-react-app _globally
+* To install \_create-react-app \_globally
 
 ```
 yarn global add create-react-app
 ```
-
-
 
 ### Generating and Serving a React Project using_create-react-app_
 
@@ -18,15 +16,11 @@ yarn global add create-react-app
 create-react-app confusion
 ```
 
-* Move to the _confusion _folder
+* Move to the \_confusion \_folder
 
-* open browser at the address[http://](http://%3Cyour/)&lt;Your Computer's Name&gt;:3000.
-
-
+* open browser at the address[http://](http://<your/)&lt;Your Computer's Name&gt;:3000.
 
 ## Configuring your React Application
-
-
 
 ### Configure your React Project to use Reactstrap
 
